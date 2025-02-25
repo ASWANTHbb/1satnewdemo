@@ -24,6 +24,7 @@
 .spacecraft {
   font-size: 10vw; /* Use viewport width (vw) for responsive font size */
   white-space: nowrap;
+
   line-height: 0.9; /* Use unitless line height for better scaling */
   margin: 0; /* Reset margin */
 }
@@ -110,4 +111,8 @@
   .sentence1 {
     font-size: 0.7rem;
   }
+
+  line-height: 7.2rem;
+  margin-top: 60px;
+
 }
