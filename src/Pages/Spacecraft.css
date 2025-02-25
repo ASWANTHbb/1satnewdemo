@@ -1,0 +1,31 @@
+.bgimg {
+  background-image: url('../assets/historyback.jpg');
+  background-size: cover;  /* Ensures the image covers the entire div */
+  background-position: center;  /* Centers the image within the div */
+  height: 110vh;  /* Adjusts the height as needed */
+  width: 100%;  /* Ensures the div takes up the full width */
+  border-bottom: 2px solid  #F7931A;
+}
+
+.sentence1 {
+  font-size: 15px;
+  padding: 20px;
+  margin-top: 200px;
+}
+
+/* YourComponent.css */
+#visit {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligns the row at the bottom of the container */
+  height: 80vh; /* Ensures the container takes up the full viewport height */
+  margin-top: 60px;
+}
+
+.spacecraft {
+  font-size: 150px;
+  white-space: nowrap;
+  line-height: 7.2rem;
+  margin-top: 60px;
+}
+
