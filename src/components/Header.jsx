@@ -37,7 +37,7 @@ function Header() {
         )}
 
         {/* Always show "1Sat" in the center */}
-        <Navbar.Brand as={Link} to="/" className={isCollapsed ? 'center-brand' : 'sat'}>
+        <Navbar.Brand as={Link} to="/" className={isCollapsed ? 'center-brand' : ''}>
           1Sat
         </Navbar.Brand>
 
@@ -54,7 +54,7 @@ function Header() {
 
           {/* Show "Cart[0]" on the right in non-responsive mode */}
           {!isCollapsed && (
-            <Nav className='cart-nav'>
+            <Nav>
               <Nav.Link>Cart[0]</Nav.Link>
             </Nav>
           )}

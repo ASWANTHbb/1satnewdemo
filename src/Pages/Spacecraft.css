@@ -8,9 +8,9 @@
 }
 
 .sentence1 {
-  font-size: 20px;
-  margin-top: 250px;
-  margin-left: 300px;
+  font-size: 15px;
+  padding: 20px;
+  margin-top: 200px;
 }
 
 /* YourComponent.css */
@@ -18,16 +18,13 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* Aligns the row at the bottom of the container */
-  
+  height: 80vh; /* Ensures the container takes up the full viewport height */
+  margin-top: 60px;
 }
 
 .spacecraft {
-  font-size: 200px;
+  font-size: 150px;
   white-space: nowrap;
-  line-height: 9.7rem;
-  margin-top: 550px;
- 
-  
-  
+  line-height: 7.2rem;
+  margin-top: 60px;
 }
-
