@@ -1,31 +1,113 @@
 .bgimg {
   background-image: url('../assets/historyback.jpg');
-  background-size: cover;  /* Ensures the image covers the entire div */
-  background-position: center;  /* Centers the image within the div */
-  height: 110vh;  /* Adjusts the height as needed */
-  width: 100%;  /* Ensures the div takes up the full width */
-  border-bottom: 2px solid  #F7931A;
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image within the div */
+  height: 110vh; /* Adjusts the height as needed */
+  width: 100%; /* Ensures the div takes up the full width */
+  border-bottom: 2px solid #F7931A;
+  position: relative; /* Add this to make #visit positioning relative to .bgimg */
 }
 
-.sentence1 {
-  font-size: 15px;
-  padding: 20px;
-  margin-top: 200px;
-}
-
-/* YourComponent.css */
 #visit {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Aligns the row at the bottom of the container */
-  height: 80vh; /* Ensures the container takes up the full viewport height */
-  margin-top: 60px;
+  justify-content: flex-end; /* Aligns content to the bottom */
+  align-items: flex-start; /* Aligns items to the left */
+  height: auto; /* Let the content dictate the height */
+  padding: 2rem; /* Add padding for better spacing */
+  position: absolute; /* Position absolutely within .bgimg */
+  bottom: 0; /* Stick to the bottom */
+  left: 0; /* Align to the left */
+  right: 0; /* Stretch to the right */
 }
 
 .spacecraft {
-  font-size: 150px;
+  font-size: 10vw; /* Use viewport width (vw) for responsive font size */
   white-space: nowrap;
-  line-height: 7.2rem;
-  margin-top: 60px;
+  line-height: 0.9; /* Use unitless line height for better scaling */
+  margin: 0; /* Reset margin */
 }
 
+.sentence1 {
+  font-size: 1.2rem; /* Use relative units (rem) */
+  margin-top: 6rem; /* Add some space between .spacecraft and .sentence1 */
+  
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+  .spacecraft {
+    font-size: 10vw; /* Use viewport width (vw) for responsive font size */
+    white-space: nowrap;
+    line-height: 1.2; /* Use unitless line height for better scaling */
+    margin: 0; /* Reset margin */
+  }
+
+  .sentence1 {
+    font-size: 1.2rem; /* Use relative units (rem) */
+    margin-top: 1rem; /* Add some space between .spacecraft and .sentence1 */
+    padding: 10%; /* Reset padding */
+  }
+}
+
+@media (max-width: 992px) {
+  .spacecraft {
+    font-size: 10vw; /* Use viewport width (vw) for responsive font size */
+    white-space: nowrap;
+    line-height: 1.2; /* Use unitless line height for better scaling */
+    margin: 0; /* Reset margin */
+  }
+
+  .sentence1 {
+    font-size: 0.9rem; /* Use relative units (rem) */
+    margin-top: 5rem; /* Add some space between .spacecraft and .sentence1 */
+    padding: 10%; /* Reset padding */
+    
+    
+  }
+
+  #visit {
+    padding: 1.5rem; /* Reduce padding for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .spacecraft {
+    font-size: 9vw; /* Increased size for tablets */
+  }
+
+  .sentence1 {
+    font-size: 0.9rem;
+  }
+
+  #visit {
+    align-items: center; /* Center align items on smaller screens */
+    text-align: center; /* Center text */
+    padding: 1rem; /* Further reduce padding */
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 576px) {
+  .spacecraft {
+    font-size: 12vw; /* Increased size for small phones */
+  }
+
+  .sentence1 {
+    font-size: 0.8rem;
+  }
+
+  #visit {
+    padding: 0.5rem; /* Minimal padding for very small screens */
+  }
+}
+
+@media (max-width: 400px) {
+  .spacecraft {
+    font-size: 14vw; /* Further increased size for very small phones */
+  }
+
+  .sentence1 {
+    font-size: 0.7rem;
+  }
+}
