@@ -1,80 +1,80 @@
 .bgimg {
   background-image: url('../assets/historyback.jpg');
-  background-size: cover; /* Ensures the image covers the entire div */
-  background-position: center; /* Centers the image within the div */
-  height: 110vh; /* Adjusts the height as needed */
-  width: 100%; /* Ensures the div takes up the full width */
-  border-bottom: 2px solid #F7931A;
-  position: relative; /* Add this to make #visit positioning relative to .bgimg */
+  background-size: cover; 
+  background-position: center; 
+  height: 100vh; 
+  width: 100%; 
+  border-bottom: 1px solid #F7931A;
+  position: relative; 
+  
 }
 
 #visit {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Aligns content to the bottom */
-  align-items: flex-start; /* Aligns items to the left */
-  height: auto; /* Let the content dictate the height */
-  padding: 2rem; /* Add padding for better spacing */
-  position: absolute; /* Position absolutely within .bgimg */
-  bottom: 0; /* Stick to the bottom */
-  left: 0; /* Align to the left */
-  right: 0; /* Stretch to the right */
+  justify-content: flex-end; 
+  align-items: flex-start;
+  height: auto;
+  padding: 2rem; 
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  right: 0; 
 }
 
 .spacecraft {
-  font-size: 10vw; /* Use viewport width (vw) for responsive font size */
+  font-size: 10vw;
   white-space: nowrap;
-
-  line-height: 0.9; /* Use unitless line height for better scaling */
-  margin: 0; /* Reset margin */
+  line-height: 0.9; 
+  margin: 0; 
 }
 
 .sentence1 {
-  font-size: 1.2rem; /* Use relative units (rem) */
-  margin-top: 6rem; /* Add some space between .spacecraft and .sentence1 */
+  font-size: 1.2rem; 
+  margin-top: 6rem; 
   
 }
 
-/* Responsive adjustments for smaller screens */
+
 @media (max-width: 1200px) {
   .spacecraft {
-    font-size: 10vw; /* Use viewport width (vw) for responsive font size */
+    font-size: 10vw; 
     white-space: nowrap;
-    line-height: 1.2; /* Use unitless line height for better scaling */
-    margin: 0; /* Reset margin */
+    line-height: 1.2; 
+    margin: 0; 
   }
 
   .sentence1 {
-    font-size: 1.2rem; /* Use relative units (rem) */
-    margin-top: 1rem; /* Add some space between .spacecraft and .sentence1 */
-    padding: 10%; /* Reset padding */
+    font-size: 1.2rem; 
+    margin-top: 1rem; 
+    padding: 10%; 
   }
 }
 
 @media (max-width: 992px) {
   .spacecraft {
-    font-size: 10vw; /* Use viewport width (vw) for responsive font size */
+    font-size: 10vw; 
     white-space: nowrap;
-    line-height: 1.2; /* Use unitless line height for better scaling */
-    margin: 0; /* Reset margin */
+    line-height: 1.2; 
+    margin: 0; 
   }
 
   .sentence1 {
-    font-size: 0.9rem; /* Use relative units (rem) */
-    margin-top: 5rem; /* Add some space between .spacecraft and .sentence1 */
-    padding: 10%; /* Reset padding */
+    font-size: 0.9rem; 
+    margin-top: 5rem; 
+    padding: 10%; 
     
     
   }
 
   #visit {
-    padding: 1.5rem; /* Reduce padding for smaller screens */
+    padding: 1.5rem; 
   }
 }
 
 @media (max-width: 768px) {
   .spacecraft {
-    font-size: 9vw; /* Increased size for tablets */
+    font-size: 9vw; 
   }
 
   .sentence1 {
@@ -82,16 +82,16 @@
   }
 
   #visit {
-    align-items: center; /* Center align items on smaller screens */
-    text-align: center; /* Center text */
-    padding: 1rem; /* Further reduce padding */
+    align-items: center;
+    text-align: center; 
+    padding: 1rem; 
     overflow: hidden;
   }
 }
 
 @media (max-width: 576px) {
   .spacecraft {
-    font-size: 12vw; /* Increased size for small phones */
+    font-size: 12vw; 
   }
 
   .sentence1 {
@@ -99,20 +99,38 @@
   }
 
   #visit {
-    padding: 0.5rem; /* Minimal padding for very small screens */
+    padding: 0.5rem; 
   }
 }
 
 @media (max-width: 400px) {
   .spacecraft {
-    font-size: 14vw; /* Further increased size for very small phones */
+    font-size: 14vw;
   }
 
   .sentence1 {
     font-size: 0.7rem;
   }
+}
 
-  line-height: 7.2rem;
-  margin-top: 60px;
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  padding: 10%;
+}
 
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: transform 0.5s ease; 
+  
+}
+
+
+.img-container.zoomed img {
+  transform: scale(1.2); 
+  
 }

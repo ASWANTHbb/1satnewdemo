@@ -1,0 +1,114 @@
+.homebg {
+    background-image: url('../assets/alienbg.png');
+    background-size: cover;  /* Ensures the image covers the entire div */
+    background-position: center;  /* Centers the image within the div */
+    height: 120vh;  /* Adjusts the height as needed */
+    width: 100%;  /* Ensures the div takes up the full width */
+    border-bottom: 2px solid  #F7931A;
+  }
+
+  .hello-text {
+    font-size: 40vh; /* Default font size for larger screens */
+    margin-top: -10vh; /* Default margin for larger screens */
+    text-align: center; /* Center the text horizontally */
+}
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
+    .hello-text {
+        font-size: 23vh; /* Smaller font size */
+        margin-top: 10vh; /* Adjust margin for smaller screens */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .hello-text {
+        font-size: 23vh; /* Even smaller font size */
+        margin-top: 10vh; /* Adjust margin for mobile screens */
+    }
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+    .hello-text {
+        font-size: 23vh; /* Smallest font size */
+        margin-top: 0vh; /* Adjust margin for very small screens */
+    }
+}
+.alien-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.alien1 {
+    position: absolute;
+    left: 30%;
+    top: 260px;
+    max-height: 84vh;
+    width: 80vh;
+    
+    
+}
+
+/* Adjust for screens 991px or smaller */
+@media (max-width: 991px) {
+    .alien1 {
+        width: 50vw;
+        top: 300px;
+    }
+}
+
+/* Adjust for mobile devices (480px and below) */
+@media (max-width: 480px) {
+    .alien1 {
+        width: 70vw;
+        top: 250px;
+    }
+}
+.down-text {
+    position: relative;
+    font-size: 40vh; /* Default font size for larger screens */
+    margin-top: 0vh; /* Default margin for larger screens */
+    text-align: center; /* Center the text horizontally */
+}
+
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
+    .down-text {
+        font-size: 23vh; /* Smaller font size */
+        margin-top: 10vh; /* Adjust margin for smaller screens */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .down-text {
+        font-size: 23vh; /* Even smaller font size */
+        margin-top: 10vh; /* Adjust margin for mobile screens */
+    }
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+    .down-text {
+        font-size: 23vh; /* Smallest font size */
+        margin-top: 0vh; /* Adjust margin for very small screens */
+    }
+}
+.starbg{
+    background-image: url('../assets/landingbg.jpg');
+    background-size: cover;  /* Ensures the image covers the entire div */
+    background-position: center;  /* Centers the image within the div */
+    height: 120vh;  /* Adjusts the height as needed */
+    width: 100%;  /* Ensures the div takes up the full width */
+   
+}
