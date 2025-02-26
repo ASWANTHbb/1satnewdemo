@@ -108,7 +108,91 @@
     background-image: url('../assets/landingbg.jpg');
     background-size: cover;  /* Ensures the image covers the entire div */
     background-position: center;  /* Centers the image within the div */
-    height: 120vh;  /* Adjusts the height as needed */
+    height: 240vh;  /* Adjusts the height as needed */
     width: 100%;  /* Ensures the div takes up the full width */
    
 }
+.earth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.earth {
+    position: absolute;
+    top: 900px;
+    max-height: 84vh;
+    width: 50vh;
+    animation: spinEarth 10s linear infinite; /* Adjust time as needed */
+}
+
+/* @keyframes spinEarth {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg); 
+    }
+} */
+ .greet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 60vh;
+    font-size: 3.5vh; /* Default font size for larger screens */
+    font-family: Space Mono;
+    font-weight: bolder;
+ }
+ .greet1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 65vh;
+    font-size: 2vh; /* Default font size for larger screens */
+    font-family: Space Mono;
+    padding-left:450px;
+    padding-right: 450px;
+    text-align: center;
+    font-weight: bolder;
+ }
+ .footbg{
+    background-size: cover;  /* Ensures the image covers the entire div */
+    background-position: center;  /* Centers the image within the div */
+    height: 100vh;  /* Adjusts the height as needed */
+    width: 100%;  /* Ensures the div takes up the full width */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 700px;
+    
+ 
+}
+.faq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 6vh; /* Default font size for larger screens */
+    font-family: Bebas Neue;
+    text-align: center;
+    font-weight: bolder;
+    bottom: 150px;
+}
+.faq1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 15vh;
+    font-size: 2vh; /* Default font size for larger screens */
+    font-family: Space Mono;
+    padding-left:450px;
+    padding-right: 450px;
+    text-align: center;
+    font-weight: bolder;
+ }
