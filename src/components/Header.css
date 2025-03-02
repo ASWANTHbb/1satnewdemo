@@ -3,11 +3,14 @@
 .custom-navbar .navbar-brand,
 .custom-navbar .dropdown-item {
   color: #F7931A !important;
+  font-family: 'Space Mono';
+  
 }
 
 .custom-navbar .nav-link:hover,
 .custom-navbar .dropdown-item:hover {
   color: #F7931A;
+  
  
 }
 

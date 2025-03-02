@@ -1,0 +1,119 @@
+/* PaymentPage.css */
+.payment-container {
+    min-height: 100vh;
+    background-color: #081f34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    border-radius: 0px;
+  }
+  
+  .payment-box {
+    width: 100%;
+    max-width: 400px;
+    background-color: transparent;
+    color: orange;
+    padding: 1.0rem;
+    border: 1px solid orange;
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.2);
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 20vh;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: 'Bebas Neue', cursive;
+  }
+  
+  .balance-box {
+    background-color: #081f34;
+    padding: 0.75rem;
+    border-radius: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .remove {
+    font-size: 0.875rem;
+    color: orange;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+
+  }
+  
+  .payment-button {
+    width: 100%;
+    background: transparent;
+    border: 1px solid orange;
+    color: orange;
+    padding: 0.5rem;
+    border-radius: 0px;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+
+  }
+  
+  .upi-text {
+    color: white;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .upi-button {
+    width: 100%;
+    background: transparent;
+    border: 1px solid orange;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+
+  }
+  
+  .icon {
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+  
+  .marquee-box {
+    margin-top: 15rem;
+    width: 100%;
+    max-width: 600vh;
+    color: orange;
+    text-align: center;
+    border-top: 1px solid orange;
+    border-bottom: 1px solid orange;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 3vh;
+  }
+  
+  .marquee {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+
+  .footback{
+    background-image: url(../assets/bgimg1.png);
+    background-size: cover;
+    height: 60vh;
+
+  }
+  

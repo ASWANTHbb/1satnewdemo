@@ -1,0 +1,211 @@
+/* PaymentForm.css */
+.bg {
+    background-color: #081f34;   
+  }
+  
+  .dc-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    
+  }
+  
+  .payment-box {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #F7931A;
+    border-radius: 0px;
+    background-color: #081f34;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #F7931A;
+    
+  }
+  
+  .balance-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ff8c00;
+    margin-bottom: 5px;
+    background-color: transparent;
+    
+  }
+  
+  .balance-text-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .balance-title {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ff8c00;
+    display: flex;
+    align-items: center;
+    
+    
+  }
+  
+  .balance-text {
+    font-size: 0.9rem;
+    color: #ff8c00;
+    font-family: 'Space Mono', monospace;
+    
+  }
+  
+  .remove-btn {
+    font-size: 0.9rem;
+    background: none;
+    border: none;
+    color: #ff8c00;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  
+  .card-type {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .card-type span {
+    cursor: pointer;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Space Mono', monospace;
+    
+  }
+  
+  .card-type .active {
+    border-bottom: 3px solid #F7931A;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .label {
+    font-size: 0.9rem;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .card-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #F7931A;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .card-input input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: #F7931A;
+    font-size: 1rem;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .card-logo {
+    width: 30px;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .card-details {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .select,
+  .cvv-input {
+    flex: 1;
+    padding: 8px;
+    background: none;
+    border: 1px solid #F7931A;
+    color: #F7931A;
+    font-size: 1rem;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .name-input {
+    width: 100%;
+    padding: 8px;
+    background: none;
+    border: 1px solid #F7931A;
+    color: #F7931A;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .checkbox-container input {
+    margin-right: 5px;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .cancel-btn,
+  .pay-btn {
+    padding: 10px;
+    border: 1px solid #F7931A;
+    border-radius: 5px;
+    background: none;
+    color: #F7931A;
+    cursor: pointer;
+    width: 48%;
+    font-size: 1rem;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  .pay-btn {
+    background-color: #F7931A;
+    color: #0a0f24;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .payment-box {
+      padding: 15px;
+    }
+  
+    .card-details {
+      flex-direction: column;
+    }
+  
+    .select,
+    .cvv-input {
+      width: 100%;
+    }
+  }

@@ -5,6 +5,7 @@ import bglobe from '../assets/ourhistory.png';
 import btshirt from '../assets/dress.jpg';
 import { Link } from 'react-router-dom';
 import arrival from '../assets/arrival.jpg';
+import Footer from '../components/Footer'
 function SpaceCraft() {
   const [isZoomed, setIsZoomed] = useState(false);
 
@@ -74,68 +75,69 @@ function SpaceCraft() {
         <img src={bglobe} alt="no image" className="img-fluid" style={{ height: '400px', width: '100%', objectFit: 'cover' }} />
       </div>
     </div>
-  <div className="col-md-2"></div>
-    {/* Text Column */}
-    <div className="col-12 col-md-5 d-flex justify-content-center align-items-center flex-column text-center text-md-start">
-      <h1 className="mb-3" style={{ color: '#F7931A' }}>What to Expect</h1>
-      <p className="mb-0" style={{marginLeft:'16%'}}>
-        We can understand why you might be nervous – it is a giant metal flying object, after all, from a place you’ve never been or even heard of. It’s nothing like a car or plane, but don’t worry! We’ve done this plenty of times and people mostly make it back fully intact.
-      </p>
-    </div>
-  </div>
-  {/* next row */}
-  <div className="row  p-3 p-md-5">
-  <div className="col-12 col-md-5 d-flex justify-content-center align-items-center flex-column text-center text-md-start">
-      <h1 className="mb-3" style={{ color: '#F7931A' }}>how to dress</h1>
-      <p className="mb-0 " style={{marginLeft:'18%'}}>
-      We will try to make your journey as enjoyable as possible, but since your human bodies are not familiar with this form of travel, we suggest wearing only the most comfortable coverings. We have designed a few you might enjoy.
-      </p>
-     <Link to={'/covering'}>
-       <button 
-      className='btn' 
-      style={{ 
-        backgroundColor: 'transparent', 
-        color: '#F7931A', 
-        border: '1px solid  #F7931A',
-        borderRadius: '25px', 
-        padding: '1% 20px', 
-        width:'100%',
-        marginTop:'10%',
-        marginLeft:'15%',
-        fontSize: '16px', 
-        cursor: 'pointer', 
-      }}
-    >
-      SHOP BODILY COVERINGS
-    </button>
-     </Link>
-    </div>
-  <div className="col-md-2"></div>
-  <div className="col-12 col-md-5 mb-4 mb-md-0">
-      <div className={`img-container ${isZoomed ? 'zoomed' : ''}`}>
-        <img src={btshirt} alt="no image" className="img-fluid" style={{ height: '400px', width: '100%', objectFit: 'cover' }} />
+    <div className="col-md-2"></div>
+      {/* Text Column */}
+      <div className="col-12 col-md-5 d-flex justify-content-center align-items-center flex-column text-center text-md-start">
+        <h1 className="mb-3" style={{ color: '#F7931A' }}>What to Expect</h1>
+        <p className="mb-0" style={{marginLeft:'16%'}}>
+          We can understand why you might be nervous – it is a giant metal flying object, after all, from a place you’ve never been or even heard of. It’s nothing like a car or plane, but don’t worry! We’ve done this plenty of times and people mostly make it back fully intact.
+        </p>
       </div>
     </div>
-    
-    
-  </div>
-  <div className="row p-3 p-md-5">
-    {/* Image Column */}
+    {/* next row */}
+    <div className="row  p-3 p-md-5">
+    <div className="col-12 col-md-5 d-flex justify-content-center align-items-center flex-column text-center text-md-start">
+        <h1 className="mb-3" style={{ color: '#F7931A' }}>how to dress</h1>
+        <p className="mb-0 " style={{marginLeft:'18%'}}>
+        We will try to make your journey as enjoyable as possible, but since your human bodies are not familiar with this form of travel, we suggest wearing only the most comfortable coverings. We have designed a few you might enjoy.
+        </p>
+       <Link to={'/covering'}>
+         <button 
+        className='btn' 
+        style={{ 
+          backgroundColor: 'transparent', 
+          color: '#F7931A', 
+          border: '1px solid  #F7931A',
+          borderRadius: '25px', 
+          padding: '1% 20px', 
+          width:'100%',
+          marginTop:'10%',
+          marginLeft:'15%',
+          fontSize: '16px', 
+          cursor: 'pointer', 
+        }}
+      >
+        SHOP BODILY COVERINGS
+      </button>
+       </Link>
+      </div>
+    <div className="col-md-2"></div>
     <div className="col-12 col-md-5 mb-4 mb-md-0">
-      <div className={`img-container ${isZoomed ? 'zoomed' : ''}`}>
-        <img src={arrival} alt="no image" className="img-fluid" style={{ height: '400px', width: '100%', objectFit: 'cover' }} />
+        <div className={`img-container ${isZoomed ? 'zoomed' : ''}`}>
+          <img src={btshirt} alt="no image" className="img-fluid" style={{ height: '400px', width: '100%', objectFit: 'cover' }} />
+        </div>
+      </div>
+      
+      
+    </div>
+    <div className="row p-3 p-md-5">
+      {/* Image Column */}
+      <div className="col-12 col-md-5 mb-4 mb-md-0">
+        <div className={`img-container ${isZoomed ? 'zoomed' : ''}`}>
+          <img src={arrival} alt="no image" className="img-fluid" style={{ height: '400px', width: '100%', objectFit: 'cover' }} />
+        </div>
+      </div>
+    <div className="col-md-2"></div>
+      {/* Text Column */}
+      <div className="col-12 col-md-5 d-flex justify-content-center align-items-center flex-column text-center text-md-start">
+        <h1 className="mb-3" style={{ color: '#F7931A' }}>ARRIVAL & DEPARTURE</h1>
+        <p className="mb-0" style={{marginLeft:'5%'}}>
+        After booking your visit, a giant light beam will appear at your specified time and location. Once you are off the ground, time will not move at the rate you are accustomed to, so ensure you have things in order back on Earth. If you do not show up, you will still be charged.
+        </p>
       </div>
     </div>
-  <div className="col-md-2"></div>
-    {/* Text Column */}
-    <div className="col-12 col-md-5 d-flex justify-content-center align-items-center flex-column text-center text-md-start">
-      <h1 className="mb-3" style={{ color: '#F7931A' }}>ARRIVAL & DEPARTURE</h1>
-      <p className="mb-0" style={{marginLeft:'5%'}}>
-      After booking your visit, a giant light beam will appear at your specified time and location. Once you are off the ground, time will not move at the rate you are accustomed to, so ensure you have things in order back on Earth. If you do not show up, you will still be charged.
-      </p>
-    </div>
-  </div>
   
+<div className='footback'><Footer/></div>
      </div>
 
     </>

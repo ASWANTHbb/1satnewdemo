@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 function Header() {
+  
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
@@ -27,18 +28,19 @@ function Header() {
   }, []);
 
   return (
+    
     <Navbar collapseOnSelect expand="lg" className="custom-navbar">
       <Container>
         {/* Show "Cart[0]" on the left in responsive mode */}
         {isCollapsed && (
           <Nav className="responsive-cart">
-            <Nav.Link>Cart[0]</Nav.Link>
+            <Nav.Link as={Link} to="/cart">CART[0]</Nav.Link>
           </Nav>
         )}
 
         {/* Always show "1Sat" in the center */}
         <Navbar.Brand as={Link} to="/" className={isCollapsed ? 'center-brand' : ''}>
-          1Sat
+          1SAT
         </Navbar.Brand>
 
         {/* Toggle button on the right */}
@@ -47,15 +49,15 @@ function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
           {/* Nav links with conditional styling for responsive mode */}
           <Nav className={`nav-center mx-auto ${isCollapsed ? 'responsive-nav' : ''}`}>
-            <Nav.Link as={Link} to="/spacecraft">Visit Spacecraft</Nav.Link>
-            <Nav.Link as={Link} to="/history">Our History</Nav.Link>
-            <Nav.Link as={Link} to="/covering">Bodily Coverings</Nav.Link>
+            <Nav.Link as={Link} to="/spacecraft">VISIT SPACECRAFT</Nav.Link>
+            <Nav.Link as={Link} to="/history">OUR HISTORY</Nav.Link>
+            <Nav.Link as={Link} to="/covering">BODILY COVERINGS</Nav.Link>
           </Nav>
 
           {/* Show "Cart[0]" on the right in non-responsive mode */}
           {!isCollapsed && (
             <Nav>
-              <Nav.Link>Cart[0]</Nav.Link>
+              <Nav.Link as={Link} to="/cart">CART[0]</Nav.Link>
             </Nav>
           )}
         </Navbar.Collapse>

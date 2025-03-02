@@ -1,0 +1,68 @@
+/* App.css */
+.App {
+    text-align: center;
+    
+  }
+  
+  main {
+    background-color: #d4ff7f;
+    height: 70vh;
+  }
+  
+  .shopping-cart {
+    text-align: center;
+    
+  }
+  
+  .shopping-cart h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3vh;
+    margin-right: 157vh;
+    margin-top: 10vh;
+    color: black;
+    font-family: 'Bebas Neue', cursive;
+  }
+  
+  .shopping-cart p {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    margin-right: 121vh;
+  }
+  
+  button {
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    border-radius: 30px;
+    
+    
+  }
+   
+  .footer-content {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-content p {
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+    }
+  }
+  .head{
+    color: black;
+  }
+  .button{
+    margin-right: 155vh;
+    border-radius: 10vh;
+  }
+
+ 
