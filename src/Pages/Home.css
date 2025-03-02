@@ -1,49 +1,24 @@
 .homebg {
     background-image: url('../assets/alienbg.png');
-    background-size: cover;  /* Ensures the image covers the entire div */
-    background-position: center;  /* Centers the image within the div */
-    height: 120vh;  /* Adjusts the height as needed */
-    width: 100%;  /* Ensures the div takes up the full width */
-    border-bottom: 2px solid  #F7931A;
-  }
-
-  .hello-text {
-    font-size: 40vh; /* Default font size for larger screens */
-    margin-top: -10vh; /* Default margin for larger screens */
-    text-align: center; /* Center the text horizontally */
+    background-size: cover;
+    background-position: center;
+    height: 120vh;
+    width: 100%;
+    border-bottom: 2px solid #F7931A;
 }
 
-/* Media Queries for Responsive Design */
+.hello-text {
+    font-size: 40vh;
+    margin-top: -10vh;
+    text-align: center;
+	font-family: 'Bebas Neue';
 
-/* For tablets and smaller desktops */
-@media (max-width: 1024px) {
-    .hello-text {
-        font-size: 23vh; /* Smaller font size */
-        margin-top: 10vh; /* Adjust margin for smaller screens */
-    }
 }
 
-/* For mobile devices */
-@media (max-width: 768px) {
-    .hello-text {
-        font-size: 23vh; /* Even smaller font size */
-        margin-top: 10vh; /* Adjust margin for mobile screens */
-    }
-}
-
-/* For very small mobile devices */
-@media (max-width: 480px) {
-    .hello-text {
-        font-size: 23vh; /* Smallest font size */
-        margin-top: 0vh; /* Adjust margin for very small screens */
-    }
-}
 .alien-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
 }
 
 .alien1 {
@@ -52,72 +27,29 @@
     top: 260px;
     max-height: 84vh;
     width: 80vh;
-    
-    
 }
 
-/* Adjust for screens 991px or smaller */
-@media (max-width: 991px) {
-    .alien1 {
-        width: 50vw;
-        top: 300px;
-    }
-}
-
-/* Adjust for mobile devices (480px and below) */
-@media (max-width: 480px) {
-    .alien1 {
-        width: 70vw;
-        top: 250px;
-    }
-}
 .down-text {
     position: relative;
-    font-size: 40vh; /* Default font size for larger screens */
-    margin-top: 0vh; /* Default margin for larger screens */
-    text-align: center; /* Center the text horizontally */
+    font-size: 40vh;
+    margin-top: 0vh;
+    text-align: center;
+    font-family: "Bebas Neue", serif;
+
 }
 
-
-/* Media Queries for Responsive Design */
-
-/* For tablets and smaller desktops */
-@media (max-width: 1024px) {
-    .down-text {
-        font-size: 23vh; /* Smaller font size */
-        margin-top: 10vh; /* Adjust margin for smaller screens */
-    }
-}
-
-/* For mobile devices */
-@media (max-width: 768px) {
-    .down-text {
-        font-size: 23vh; /* Even smaller font size */
-        margin-top: 10vh; /* Adjust margin for mobile screens */
-    }
-}
-
-/* For very small mobile devices */
-@media (max-width: 480px) {
-    .down-text {
-        font-size: 23vh; /* Smallest font size */
-        margin-top: 0vh; /* Adjust margin for very small screens */
-    }
-}
-.starbg{
+.starbg {
     background-image: url('../assets/landingbg.jpg');
-    background-size: cover;  /* Ensures the image covers the entire div */
-    background-position: center;  /* Centers the image within the div */
-    height: 240vh;  /* Adjusts the height as needed */
-    width: 100%;  /* Ensures the div takes up the full width */
-   
+    background-size: cover;
+    background-position: center;
+    height: 240vh;
+    width: 100%;
 }
+
 .earth-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
 }
 
 .earth {
@@ -125,74 +57,233 @@
     top: 900px;
     max-height: 84vh;
     width: 50vh;
-    animation: spinEarth 10s linear infinite; /* Adjust time as needed */
+    animation: spinEarth 10s linear infinite;
 }
 
-/* @keyframes spinEarth {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(360deg); 
-    }
-} */
- .greet{
+.greet {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 60vh;
-    font-size: 3.5vh; /* Default font size for larger screens */
-    font-family: Space Mono;
+    top: 57vh;
+    font-size: 3.5vh;
+    font-family: 'Space Mono', monospace;
     font-weight: bolder;
- }
- .greet1{
+}
+
+.greet1 {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     top: 65vh;
-    font-size: 2vh; /* Default font size for larger screens */
-    font-family: Space Mono;
-    padding-left:450px;
+    font-size: 2vh;
+    font-family: 'Space Mono', monospace;
+    padding-left: 450px;
     padding-right: 450px;
     text-align: center;
     font-weight: bolder;
- }
- .footbg{
-    background-size: cover;  /* Ensures the image covers the entire div */
-    background-position: center;  /* Centers the image within the div */
-    height: 100vh;  /* Adjusts the height as needed */
-    width: 100%;  /* Ensures the div takes up the full width */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 700px;
     
- 
 }
-.faq{
+
+.footbg {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 990px;
+}
+
+.faq {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    font-size: 6vh; /* Default font size for larger screens */
-    font-family: Bebas Neue;
+    font-size: 6vh;
+    font-family: 'Bebas Neue', cursive;
     text-align: center;
     font-weight: bolder;
     bottom: 150px;
 }
-.faq1{
+
+.faq1 {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     bottom: 15vh;
-    font-size: 2vh; /* Default font size for larger screens */
-    font-family: Space Mono;
-    padding-left:450px;
+    font-size: 2vh;
+    font-family: 'Space Mono', monospace;
+    padding-left: 450px;
     padding-right: 450px;
     text-align: center;
     font-weight: bolder;
- }
+}
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
+    .hello-text {
+        font-size: 20vh;
+        margin-top: 10vh;
+    }
+
+    .alien1 {
+        width: 90vw;
+        top: 500px;
+        left: 1vh;
+    }
+
+    .down-text {
+        font-size: 20vh;
+        margin-top: 1vh;
+    }
+
+    .greet1, .faq1 {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .faq{
+        bottom: 200px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .hello-text {
+        font-size: 20vh;
+        margin-top: 10vh;
+    }
+
+    .alien1 {
+        width: 90vw;
+        top: 500px;
+        left: 1vh;
+    }
+
+    .down-text {
+        font-size: 20vh;
+        margin-top: 1vh;
+    }
+
+    .greet1, .faq1 {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .faq{
+        bottom: 200px;
+    }
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+    .hello-text {
+        font-size: 20vh;
+        margin-top: 10vh;
+    }
+
+    .alien1 {
+        width: 90vw;
+        top: 500px;
+        left: 1vh;
+    }
+
+    .down-text {
+        font-size: 20vh;
+        margin-top: 1vh;
+        
+    }
+
+    .greet1, .faq1 {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .faq{
+        bottom: 200px;
+    }
+}
+.accordion {
+  margin-bottom: 3rem;
+  background-color: transparent !important; /* Make accordion background transparent */
+  font-family: 'Space Mono', monospace;
+}
+
+.accordion-item {
+  margin-bottom: 0; /* Remove margin between Accordion items */
+  background-color: transparent !important; /* Make accordion item background transparent */
+  font-family: 'Space Mono', monospace;
+}
+
+.accordion-button {
+  position: relative;
+  padding-right: 40px; /* Ensure space for the custom icon */
+  background-color: transparent !important; /* Make button background transparent */
+  border: none !important;
+  box-shadow: none !important;
+  color: #F7931A !important; /* Bitcoin orange text color */
+  font-family: 'Space Mono', monospace;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important; /* Remove background color when expanded */
+  box-shadow: none !important; /* Remove box shadow when expanded */
+}
+
+.accordion-button:hover {
+  background-color: transparent !important; /* Remove hover background color */
+}
+
+.accordion-button:focus {
+  box-shadow: none !important; /* Remove focus outline */
+}
+
+.accordion-button:not(.collapsed)::before,
+.accordion-button.collapsed::before {
+  content: "";
+  position: absolute;
+  right: 15px; /* Position the icon where the default arrow was */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.accordion-button:not(.collapsed)::before {
+  content: "-"; /* Minus icon when expanded */
+}
+
+.accordion-button.collapsed::before {
+  content: "+"; /* Plus icon when collapsed */
+}
+
+/* Move the entire Accordion to the top of the screen */
+.accordion-container {
+  margin-top: 0; /* Remove top margin */
+  padding-top: 0; /* Remove top padding */
+  background-color: transparent !important; /* Make container background transparent */
+}
+
+/* Remove underline from accordion items */
+.accordion-container .accordion-item {
+    border-bottom: none !important;
+  }
+  #acco{
+    padding-left: 100px;
+    padding-right: 100px; 
+    font-family: 'Space Mono', monospace;
+   
+}
+.accordion-container .accordion .accordion-button {
+    font-size: 13px !important; /* Force the font size */
+  }
+.inside{
+    font-family: 'Space Mono', monospace;
+}
+.accordion-body{
+    font-family: 'Space Mono', monospace;
+}

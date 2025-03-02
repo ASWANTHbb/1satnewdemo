@@ -1,0 +1,27 @@
+.ftbg {
+    background-image: url('../assets/bgimg1.png'); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    height: 50vh; /* Decreased height */
+    width: 100%;
+    position: relative;
+  }
+  
+  .marquee-box {
+    margin-top: 5.5rem;
+    width: 100%;
+    max-width: 500vh;
+    color: orange;
+    text-align: center;
+    border-top: 1px solid orange;
+    border-bottom: 1px solid orange;
+    padding-top: 1.0rem;
+    padding-bottom: 1.0rem;
+    font-size: 3vh;
+    
+  }
+  
+  .marquee {
+    display: flex;
+    gap: 5rem;
+  }

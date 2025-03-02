@@ -1,113 +1,182 @@
 .his {
-    background-image: url('../assets/historybg.jpg');
-    background-size: cover; 
-    background-position: center; 
-    height: 110vh; 
-    width: 100%; 
-    border-bottom: 1px solid #F7931A;
-    position: relative; 
-  }
+  background-image: url('../assets/historybg.jpg');
+  background-size: cover; 
+  background-position: center; 
+  height: 110vh; 
+  width: 100%; 
+  border-bottom: 1px solid #F7931A;
+  position: relative; 
+}
+
+#space {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  align-items: flex-start;
+  height: auto;
+  padding: 2rem; 
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  right: 0; 
+}
+
+.study {
+  font-size: 12vw;
+  white-space: nowrap;
+  line-height: 0.9; 
+  margin: 0; 
+}
+
+.sentence2 {
+  font-size: 1.2rem; 
+  margin-top: 6rem; 
   
-  #space {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; 
-    align-items: flex-start;
-    height: auto;
-    padding: 2rem; 
-    position: absolute;
-    bottom: 0;
-    left: 0; 
-    right: 0; 
-  }
-  
+}
+
+
+@media (max-width: 1200px) {
   .study {
-    font-size: 12vw;
+    font-size: 10vw; 
     white-space: nowrap;
-    line-height: 0.9; 
+    line-height: 1.2; 
     margin: 0; 
   }
-  
+
   .sentence2 {
     font-size: 1.2rem; 
-    margin-top: 6rem; 
+    margin-top: 1rem; 
+    padding: 10%; 
+  }
+}
+
+@media (max-width: 992px) {
+  .study {
+    font-size: 10vw; 
+    white-space: nowrap;
+    line-height: 1.2; 
+    margin: 0; 
+  }
+
+  .sentence2 {
+    font-size: 0.9rem; 
+    margin-top: 5rem; 
+    padding: 10%; 
+    
     
   }
-  
-  
-  @media (max-width: 1200px) {
-    .study {
-      font-size: 10vw; 
-      white-space: nowrap;
-      line-height: 1.2; 
-      margin: 0; 
-    }
-  
-    .sentence2 {
-      font-size: 1.2rem; 
-      margin-top: 1rem; 
-      padding: 10%; 
-    }
+
+  #space {
+    padding: 1.5rem; 
   }
-  
-  @media (max-width: 992px) {
-    .study {
-      font-size: 10vw; 
-      white-space: nowrap;
-      line-height: 1.2; 
-      margin: 0; 
-    }
-  
-    .sentence2 {
-      font-size: 0.9rem; 
-      margin-top: 5rem; 
-      padding: 10%; 
-      
-      
-    }
-  
-    #space {
-      padding: 1.5rem; 
-    }
+}
+
+@media (max-width: 768px) {
+  .study {
+    font-size: 9vw; 
   }
-  
-  @media (max-width: 768px) {
-    .study {
-      font-size: 9vw; 
-    }
-  
-    .sentence2 {
-      font-size: 0.9rem;
-    }
-  
-    #space {
-      align-items: center;
-      text-align: center; 
-      padding: 1rem; 
-      overflow: hidden;
-    }
+
+  .sentence2 {
+    font-size: 0.9rem;
   }
-  
-  @media (max-width: 576px) {
-    .study {
-      font-size: 12vw; 
-    }
-  
-    .sentence2 {
-      font-size: 0.8rem;
-    }
-  
-    #space {
-      padding: 0.5rem; 
-    }
+
+  #space {
+    align-items: center;
+    text-align: center; 
+    padding: 1rem; 
+    overflow: hidden;
   }
-  
-  @media (max-width: 400px) {
-    .study{
-      font-size: 14vw;
-    }
-  
-    .sentence2 {
-      font-size: 0.7rem;
-    }
+}
+
+@media (max-width: 576px) {
+  .study {
+    font-size: 12vw; 
   }
+
+  .sentence2 {
+    font-size: 0.8rem;
+  }
+
+  #space {
+    padding: 0.5rem; 
+  }
+}
+
+@media (max-width: 400px) {
+  .study{
+    font-size: 14vw;
+  }
+
+  .sentence2 {
+    font-size: 0.7rem;
+  }
+}
+
+.accordion {
+  margin-bottom: 3rem;
+  background-color: transparent !important; /* Make accordion background transparent */
+}
+
+.accordion-item {
+  margin-bottom: 0; /* Remove margin between Accordion items */
+  border-bottom: 1px solid #F7931A !important;
+  background-color: transparent !important; /* Make accordion item background transparent */
+}
+
+.accordion-button {
+  position: relative;
+  padding-right: 40px; /* Ensure space for the custom icon */
+  background-color: transparent !important; /* Make button background transparent */
+  border: none !important;
+  box-shadow: none !important;
+  color: #F7931A !important; /* Bitcoin orange text color */
+  font-weight: bold;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important; /* Remove background color when expanded */
+  box-shadow: none !important; /* Remove box shadow when expanded */
+}
+
+.accordion-button:hover {
+  background-color: transparent !important; /* Remove hover background color */
+}
+
+.accordion-button:focus {
+  box-shadow: none !important; /* Remove focus outline */
+}
+
+.accordion-button:not(.collapsed)::before,
+.accordion-button.collapsed::before {
+  content: "";
+  position: absolute;
+  right: 15px; /* Position the icon where the default arrow was */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.accordion-button:not(.collapsed)::before {
+  content: "-"; /* Minus icon when expanded */
+}
+
+.accordion-button.collapsed::before {
+  content: "+"; /* Plus icon when collapsed */
+}
+
+/* Move the entire Accordion to the top of the screen */
+.accordion-container {
+  margin-top: 0; /* Remove top margin */
+  padding-top: 0; /* Remove top padding */
+  background-color: transparent !important; /* Make container background transparent */
+}
+
+/* Custom '+' and '-' icons */
+.accordion-button::after {
+  display: none;
+}
+
+.mm {
+  border-bottom: 1px solid #F7931A !important;
+}
