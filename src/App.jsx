@@ -7,6 +7,7 @@ import History from './Pages/History'
 import Cart from './Pages/Cart'
 import Payment from './Pages/Payment'
 import DebitCredit from './Pages/DebitCredit'
+import Login from './Pages/Login'
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
         <Route path="/cart" element={<Cart/>} />
         <Route path='/payment' element={<Payment />} />
         <Route path='/debitcredit' element={<DebitCredit />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Login />} />
 
       </Routes>
 

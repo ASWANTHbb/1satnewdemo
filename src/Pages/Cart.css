@@ -1,12 +1,11 @@
 /* App.css */
+.cartbg{
+  background-color: #081f34;
+}
+
 .App {
     text-align: center;
     
-  }
-  
-  main {
-    background-color: #d4ff7f;
-    height: 70vh;
   }
   
   .shopping-cart {
@@ -19,22 +18,22 @@
     font-size: 3vh;
     margin-right: 157vh;
     margin-top: 10vh;
-    color: black;
+    color: orange !important;
     font-family: 'Bebas Neue', cursive;
   }
   
   .shopping-cart p {
     font-family: 'Courier New', Courier, monospace;
-    color: black;
+    color: orange;
     margin-right: 121vh;
   }
   
   button {
     background-color: transparent;
-    border: 1px solid black;
+    border: 1px solid orange;
     padding: 10px 20px;
     font-family: 'Courier New', Courier, monospace;
-    color: black;
+    color: orange;
     border-radius: 30px;
     
     

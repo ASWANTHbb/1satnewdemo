@@ -5,6 +5,7 @@ import hy from '../assets/hy.gif';
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Footer from '../components/Footer';
 
 function History() {
   const [activeKey, setActiveKey] = useState(null); // State to track the active accordion item
@@ -165,7 +166,9 @@ function History() {
               <div className="col-md-1"></div>
             </div>
           </div>
+          <div className='footback'><Footer/></div>
              </div>
+          
       </div>
   
   );

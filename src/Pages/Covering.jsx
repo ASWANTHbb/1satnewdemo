@@ -11,7 +11,9 @@ import fris from '../assets/frisbee.gif'
 import doll from '../assets/Aliendoll.gif'
 import take from '../assets/Doormat.gif'
 import { Link } from 'react-router-dom'
-
+import Footer from '../components/Footer'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 function Covering() {
    useEffect(() => {
@@ -45,6 +47,7 @@ function Covering() {
           </div>
         </div>
       </div>
+      <div style={{backgroundColor:'#081f34'}}>
       <div className="flex-column d-flex justify-content-center align-items-center">
    
    <p className='access d-flex justify-content-center align-items-center text-center' style={{ color: '#F7931A' }}>
@@ -58,107 +61,134 @@ function Covering() {
      background: '#F7931A',
      width: '50%', 
      margin: '20px 0',
-   }}/>       
+   }}/> 
+
+   <div className='silver d-flex justify-content-between'>
+    <h3 style={{color:'orange'}}>Silver</h3>
+    <p className='silverp'><FontAwesomeIcon icon={faAngleLeft} className='fa-3x ms-5' /></p>
+    <p className='mt-3 fs-6 ms-3'>Deal Start In</p>
+    <p className='mt-2 fs-5 '> &nbsp; &nbsp; &nbsp;  01:10:23</p>
+    <p className='silverp'><FontAwesomeIcon icon={faAngleRight} className='fa-3x ms-4' /></p>
+    </div>      
    
    {/* First Row */}
-   <div className="row mt-5 w-100" style={{marginLeft:'100px'}}> 
-     <div className="col-12 col-md-1"></div>
-     <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
-       <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-         <img src={tshirt} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-       </div>
-       <div className='mt-3' style={{ color: '#F7931A' }}> 
-         <h6 style={{ color: '#F7931A' }}>TORSO COVERING</h6>
-         <p>Sold out</p>
-       </div>
-     </div>
-     <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
-       <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-         <img src={cap} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-       </div>
-       <div className='mt-3' style={{ color: '#F7931A' }}> 
-         <h6 style={{ color: '#F7931A' }}>HEAD COVERING</h6>
-         <p>Sold out</p>
+ 
+     <div className="row mt-5 w-100" style={{marginLeft:'100px'}}> 
+       <div className="col-12 col-md-1"></div>
+       <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
+         <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <img src={tshirt} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
          </div>
-     </div>
-     <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
-       <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-         <img src={hoodie} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+         <div className='mt-3' style={{ color: '#F7931A' }}> 
+           <h6 style={{ color: '#F7931A' }}>TORSO COVERING</h6>
+           <p>Sold out</p>
+         </div>
        </div>
-       <div className='mt-3' style={{ color: '#F7931A' }}> 
-         <h6 style={{ color: '#F7931A' }}>THICKER COVERING</h6>
-         <p>Sold out</p>
+       <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
+         <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <img src={cap} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+         </div>
+         <div className='mt-3' style={{ color: '#F7931A' }}> 
+           <h6 style={{ color: '#F7931A' }}>HEAD COVERING</h6>
+           <p>Sold out</p>
+           </div>
        </div>
+       <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
+         <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <img src={hoodie} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+         </div>
+         <div className='mt-3' style={{ color: '#F7931A' }}> 
+           <h6 style={{ color: '#F7931A' }}>THICKER COVERING</h6>
+           <p>Sold out</p>
+         </div>
+       </div>
+       <div className="col-12 col-md-1"></div>
      </div>
-     <div className="col-12 col-md-1"></div>
+     <div className='silver d-flex justify-content-between'>
+    <h3  style={{color:' #F7931A'}}>Gold</h3>
+    <p className='silverp'><FontAwesomeIcon icon={faAngleLeft} className='fa-3x ms-5' /></p>
+    <p className='mt-3 fs-6 ms-3'>Deal Start In</p>
+    <p className='mt-2 fs-5 '> &nbsp; &nbsp; &nbsp;  01:10:23</p>
+    <p className='silverp'><FontAwesomeIcon icon={faAngleRight} className='fa-3x ms-4' /></p>
+    </div>  
+     {/* Second Row */}
+     
+     <div className="row mt-5 w-100 px-3" style={{marginLeft:'100px'}}> 
+       <div className="col-12 col-md-1"></div>
+       <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
+         <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <img src={bag} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+         </div>
+         <div className='mt-3' style={{ color: '#F7931A' }}> 
+           <h6 style={{ color: '#F7931A' }}>GREETINGS TOTE</h6>
+           <p>Sold out</p>
+           </div>
+       </div>
+       <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
+         <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <img src={top} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+         </div>
+         <div className='mt-3' style={{ color: '#F7931A' }}> 
+           <h6 style={{ color: '#F7931A' }}>RAIN REPELLER</h6>
+           <p>Sold out</p>
+           </div>
+       </div>
+       <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
+         <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <img src={umb} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+         </div>
+         <div className='mt-3' style={{ color: '#F7931A' }}> 
+           <h6 style={{ color: '#F7931A' }}>UFO ATTRACTOR</h6>
+           <p>Sold out</p>
+           </div>
+       </div>
+       <div className="col-12 col-md-1"></div>
+     </div>  
+
+
+     
+     <div className='silver d-flex justify-content-between'>
+    <h3 style={{color:' #F7931A'}}>Jackpot</h3>
+    <p className='silverp'><FontAwesomeIcon icon={faAngleLeft} className='fa-3x ms-5' /></p>
+    <p className='mt-3 fs-6 ms-3'>Deal Start In</p>
+    <p className='mt-2 fs-5 '> &nbsp; &nbsp; &nbsp;  01:10:23</p>
+    <p className='silverp'><FontAwesomeIcon icon={faAngleRight} className='fa-3x ms-4' /></p>
+    </div>  
+     {/* Third Row */}
+     <div className="row mt-5 w-100 px-3" style={{marginLeft:'100px'}}> 
+       <div className="col-12 col-md-1"></div>
+       <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
+         <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <img src={fris} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+         </div>
+         <div className='mt-3' style={{ color: '#F7931A' }}>
+           <h6 style={{ color: '#F7931A' }}>PERSONAL UFO</h6>
+           <p>Sold out</p>
+           </div>
+       </div>
+       <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
+         <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <img src={doll} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+         </div>
+         <div className='mt-3' style={{ color: '#F7931A' }}> 
+           <h6 style={{ color: '#F7931A' }}>DIRT RECEPTACLE</h6>
+           <p>Sold out</p>
+           </div>
+       </div>
+       <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
+         <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <img src={take} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+         </div>
+         <div className='mt-3' style={{ color: '#F7931A' }}> 
+           <h6 style={{ color: '#F7931A' }}>ANGST RELIEVER</h6>
+           <p>Sold out</p>
+           </div>
+       </div>
+       <div className="col-12 col-md-1"></div>
+     </div>     
    </div>
- 
-   {/* Second Row */}
-   <div className="row mt-5 w-100 px-3" style={{marginLeft:'100px'}}> 
-     <div className="col-12 col-md-1"></div>
-     <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
-       <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-         <img src={bag} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-       </div>
-       <div className='mt-3' style={{ color: '#F7931A' }}> 
-         <h6 style={{ color: '#F7931A' }}>GREETINGS TOTE</h6>
-         <p>Sold out</p>
-         </div>
-     </div>
-     <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
-       <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-         <img src={top} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-       </div>
-       <div className='mt-3' style={{ color: '#F7931A' }}> 
-         <h6 style={{ color: '#F7931A' }}>RAIN REPELLER</h6>
-         <p>Sold out</p>
-         </div>
-     </div>
-     <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
-       <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-         <img src={umb} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-       </div>
-       <div className='mt-3' style={{ color: '#F7931A' }}> 
-         <h6 style={{ color: '#F7931A' }}>UFO ATTRACTOR</h6>
-         <p>Sold out</p>
-         </div>
-     </div>
-     <div className="col-12 col-md-1"></div>
-   </div>  
- 
-   {/* Third Row */}
-   <div className="row mt-5 w-100 px-3" style={{marginLeft:'100px'}}> 
-     <div className="col-12 col-md-1"></div>
-     <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
-       <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-         <img src={fris} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-       </div>
-       <div className='mt-3' style={{ color: '#F7931A' }}>
-         <h6 style={{ color: '#F7931A' }}>PERSONAL UFO</h6>
-         <p>Sold out</p>
-         </div>
-     </div>
-     <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
-       <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-         <img src={doll} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-       </div>
-       <div className='mt-3' style={{ color: '#F7931A' }}> 
-         <h6 style={{ color: '#F7931A' }}>DIRT RECEPTACLE</h6>
-         <p>Sold out</p>
-         </div>
-     </div>
-     <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
-       <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-         <img src={take} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-       </div>
-       <div className='mt-3' style={{ color: '#F7931A' }}> 
-         <h6 style={{ color: '#F7931A' }}>ANGST RELIEVER</h6>
-         <p>Sold out</p>
-         </div>
-     </div>
-     <div className="col-12 col-md-1"></div>
-   </div>     
- </div>
+  <div className='footback'> <Footer/></div>
+  </div>
       
     </div>
   )

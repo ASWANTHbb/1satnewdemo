@@ -1,0 +1,114 @@
+.bgfoot{
+    background-color: #081f34;
+}
+
+.log-container{
+    height: 100vh;
+}
+.deal{
+    margin-top: 10%;
+}
+.dealhunder{
+    font-size: 4rem;
+    margin-top: 0vh;
+    margin: 0; /* Removes all margin */
+    padding: 0; /* Removes all padding */
+    line-height: 1; /* Ensures no extra spacing from text */
+    letter-spacing: 0.2rem;
+}
+.subtitle{
+    font-size: 1rem;
+  
+    font-family: 'Space Mono';
+    
+}
+.nostr{
+    margin-top: 2rem;
+   border: 1px solid  #F7931A;
+   border-radius: 100px;
+   height: 100%;
+   width: 75%;
+   color: #F7931A;
+   font-family: 'Space Mono';
+}
+.nossub{
+   
+    font-size: 0.7rem;
+    font-family: 'Space Mono';
+}
+.logbtn {
+    display: flex; /* Ensure buttons are aligned horizontally */
+    gap: 0; /* Remove space between buttons */
+    width: 75%;
+}
+
+.logbtn .btn {
+    background-color: #0c151e; /* Blue background color */
+    color: #F7931A; /* Orange text color */
+    border-radius: 20px; /* Curved borders */
+    padding: 0.5rem 1rem; /* Decrease button size */
+    font-size: 1rem; /* Decrease font size */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-family: 'Space Mono', monospace; /* Font family with fallback */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    margin: 0; /* Remove any default margin */
+}
+
+/* Optional: Add hover effects */
+.logbtn .btn:hover {
+    background-color: #081f34; /* Darker blue on hover */
+    color: #FFA500; /* Brighter orange on hover */
+   
+
+}
+/* Active (clicked) effect */
+.logbtn .btn:active {
+    background-color: #004080 !important; /* Even darker blue when clicked */
+    color: #FF8C00 !important; /* Darker orange when clicked */
+}
+.usernamep {
+    background: none;
+    margin-top: 1rem;
+    color: #F7931A; /* Orange text color */
+    border-radius: 20px; /* Curved borders */
+    padding: 0.5rem 1rem; /* Decrease button size */
+    font-size: 1rem; /* Decrease font size */
+    border: 1px solid #F7931A; /* Solid border with Bitcoin orange color */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-family: 'Space Mono', monospace; /* Font family with fallback */
+    width: 75%;
+    outline: none; /* Remove default focus outline */
+  }
+  
+  /* Placeholder text color */
+  .usernamep::placeholder {
+    color: #F7931A; /* Bitcoin orange color for placeholder text */
+    opacity: 50%; /* Ensure full opacity */
+  }
+  
+  /* Change border color to Bitcoin orange when input is focused */
+  .usernamep:focus {
+    border-color: #F7931A; /* Keep border color as Bitcoin orange */
+  }
+  .login-button {
+    background-color: transparent; /* Transparent background */
+    border: 1px solid #FF9900; /* Inner Bitcoin orange border */
+    outline: 1px solid #FF9900; /* Outer Bitcoin orange border */
+    outline-offset: 3px; /* Space between the two borders */
+   
+    color: #F7931A; /* Orange text color */
+    border-radius: 20px; /* Curved borders */
+    padding: 0.5rem 1rem; /* Decrease button size */
+    font-size: 1rem; /* Decrease font size */
+    width: 35rem;
+    margin-top: 7%;
+   
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  }
+  
+  .login-button:hover {
+    background-color: #FF9900; /* Bitcoin orange background on hover */
+    color: white; /* White text on hover */
+  }
+  

@@ -52,6 +52,7 @@ function Header() {
             <Nav.Link as={Link} to="/spacecraft">VISIT SPACECRAFT</Nav.Link>
             <Nav.Link as={Link} to="/history">OUR HISTORY</Nav.Link>
             <Nav.Link as={Link} to="/covering">BODILY COVERINGS</Nav.Link>
+            <Nav.Link as={Link} to="/covering">PARTNER</Nav.Link>
           </Nav>
 
           {/* Show "Cart[0]" on the right in non-responsive mode */}
