@@ -42,7 +42,7 @@
     background-image: url('../assets/landingbg.jpg');
     background-size: cover;
     background-position: center;
-    height: 240vh;
+    height: 290vh;
     width: 100%;
 }
 
@@ -286,4 +286,66 @@
 }
 .accordion-body{
     font-family: 'Space Mono', monospace;
+}
+.custom-navbar,
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand,
+.custom-navbar .dropdown-item {
+  color: #F7931A !important;
+  font-family: 'Space Mono';
+  
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .dropdown-item:hover {
+  color: #F7931A;
+  
+ 
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Make sure it spans the whole width */
+}
+
+/* Default styles for nav links */
+.nav-center .nav-link {
+  font-size: 1rem; /* Default font size */
+  margin: 20px; /* Default spacing */
+  
+}
+
+/* Responsive styles for nav links */
+.responsive-nav .nav-link {
+  font-size: 1.5rem; /* Larger font size in responsive mode */
+  margin: 10px; /* Move links downward with more spacing */
+  display: block; /* Ensure each link is on a new line */
+}
+
+
+/* Center the brand in responsive mode */
+.center-brand {
+  position: absolute;
+  left: 48%;
+  top: 10px;
+    
+}
+
+
+.nav-link {
+  text-decoration: none; /* Removes the underline */
+  margin-right: 10px; /* Adds space between the links */
+  color: inherit; /* Keeps the text color */
+}
+.signup{
+    color: #F7931A;
+    border-radius: 50px;
+    border-color: #F7931A;
+    
+}
+.signup:hover{
+    background-color: #F7931A;
+    color: white;
 }

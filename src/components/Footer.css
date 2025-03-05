@@ -5,6 +5,7 @@
     height: 50vh; /* Decreased height */
     width: 100%;
     position: relative;
+    height: 100%;
   }
   
   .marquee-box {
@@ -25,3 +26,4 @@
     display: flex;
     gap: 5rem;
   }
+  

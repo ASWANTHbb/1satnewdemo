@@ -33,6 +33,11 @@
     margin-top: 6rem; 
     
   }
+  .silver{
+    margin-right: 120vh;
+    margin-top: 10vh;
+  }
+  
   
   
   @media (max-width: 1200px) {
@@ -114,3 +119,12 @@
   .access{
     margin-top: 5%;
   }
+  .time {
+  font-size: 24px; /* Adjust the font size as needed */
+  vertical-align: middle;
+}
+
+.subscript {
+  font-size: 14px; /* Adjust the font size as needed */
+  vertical-align: super; /* Position just below the center */
+}
