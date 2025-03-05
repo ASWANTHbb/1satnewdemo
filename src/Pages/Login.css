@@ -1,114 +1,161 @@
-.bgfoot{
+.bgfoot {
     background-color: #081f34;
 }
 
-.log-container{
+.log-container {
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
-.deal{
+
+.deal {
     margin-top: 10%;
 }
-.dealhunder{
+
+.dealhunder {
     font-size: 4rem;
-    margin-top: 0vh;
-    margin: 0; /* Removes all margin */
-    padding: 0; /* Removes all padding */
-    line-height: 1; /* Ensures no extra spacing from text */
+    margin: 0;
+    padding: 0;
+    line-height: 1;
     letter-spacing: 0.2rem;
 }
-.subtitle{
+
+.subtitle {
     font-size: 1rem;
-  
     font-family: 'Space Mono';
-    
 }
-.nostr{
+
+.nostr {
     margin-top: 2rem;
-   border: 1px solid  #F7931A;
-   border-radius: 100px;
-   height: 100%;
-   width: 75%;
-   color: #F7931A;
-   font-family: 'Space Mono';
+    border: 1px solid #F7931A;
+    border-radius: 100px;
+    height: 100%;
+    width: 75%;
+    color: #F7931A;
+    font-family: 'Space Mono';
 }
-.nossub{
-   
+
+.nossub {
     font-size: 0.7rem;
     font-family: 'Space Mono';
 }
+
+/* Login / Register button group */
 .logbtn {
-    display: flex; /* Ensure buttons are aligned horizontally */
-    gap: 0; /* Remove space between buttons */
+    display: flex;
     width: 75%;
+    justify-content: center;
 }
 
+/* Buttons inside the group */
 .logbtn .btn {
-    background-color: #0c151e; /* Blue background color */
-    color: #F7931A; /* Orange text color */
-    border-radius: 20px; /* Curved borders */
-    padding: 0.5rem 1rem; /* Decrease button size */
-    font-size: 1rem; /* Decrease font size */
-    border: none; /* Remove default border */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-family: 'Space Mono', monospace; /* Font family with fallback */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
-    margin: 0; /* Remove any default margin */
+    background-color: #0c151e;
+    color: #F7931A;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Optional: Add hover effects */
+/* Hover and active effects */
 .logbtn .btn:hover {
-    background-color: #081f34; /* Darker blue on hover */
-    color: #FFA500; /* Brighter orange on hover */
-   
+    background-color: #081f34;
+    color: #FFA500;
+}
 
-}
-/* Active (clicked) effect */
 .logbtn .btn:active {
-    background-color: #004080 !important; /* Even darker blue when clicked */
-    color: #FF8C00 !important; /* Darker orange when clicked */
+    background-color: #004080 !important;
+    color: #FF8C00 !important;
 }
+
+/* Align input fields with button group */
+.form-container {
+    width: 75%; /* Same width as logbtn */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input field styling */
 .usernamep {
     background: none;
     margin-top: 1rem;
-    color: #F7931A; /* Orange text color */
-    border-radius: 20px; /* Curved borders */
-    padding: 0.5rem 1rem; /* Decrease button size */
-    font-size: 1rem; /* Decrease font size */
-    border: 1px solid #F7931A; /* Solid border with Bitcoin orange color */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-family: 'Space Mono', monospace; /* Font family with fallback */
-    width: 75%;
-    outline: none; /* Remove default focus outline */
-  }
-  
-  /* Placeholder text color */
-  .usernamep::placeholder {
-    color: #F7931A; /* Bitcoin orange color for placeholder text */
-    opacity: 50%; /* Ensure full opacity */
-  }
-  
-  /* Change border color to Bitcoin orange when input is focused */
-  .usernamep:focus {
-    border-color: #F7931A; /* Keep border color as Bitcoin orange */
-  }
-  .login-button {
-    background-color: transparent; /* Transparent background */
-    border: 1px solid #FF9900; /* Inner Bitcoin orange border */
-    outline: 1px solid #FF9900; /* Outer Bitcoin orange border */
-    outline-offset: 3px; /* Space between the two borders */
-   
-    color: #F7931A; /* Orange text color */
-    border-radius: 20px; /* Curved borders */
-    padding: 0.5rem 1rem; /* Decrease button size */
-    font-size: 1rem; /* Decrease font size */
-    width: 35rem;
+    color: #F7931A;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #F7931A;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    width: 100%; /* Takes full width of form-container */
+    outline: none;
+}
+
+/* Placeholder text */
+.usernamep::placeholder {
+    color: #F7931A;
+    opacity: 50%;
+}
+
+/* Focus effect */
+.usernamep:focus {
+    border-color: #F7931A;
+}
+
+/* Login button */
+.login-button {
+    background-color: transparent;
+    border: 1px solid #FF9900;
+    outline: 1px solid #FF9900;
+    outline-offset: 3px;
+    color: #F7931A;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    width: 100%; /* Same width as input fields */
     margin-top: 7%;
-   
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-  }
-  
-  .login-button:hover {
-    background-color: #FF9900; /* Bitcoin orange background on hover */
-    color: white; /* White text on hover */
-  }
-  
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #FF9900;
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .log-container {
+        flex-direction: column;
+        height: auto;
+        padding: 30px;
+    }
+
+    .form-container,
+    .logbtn {
+        width: 90%;
+    }
+
+    .usernamep,
+    .login-button {
+        width: 100%;
+    }
+
+    .deal {
+        margin-top: 5%;
+    }
+
+    .dealhunder {
+        font-size: 3rem;
+    }
+
+    .col-md-6 img {
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+}
