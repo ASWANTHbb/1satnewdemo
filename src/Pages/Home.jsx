@@ -50,7 +50,7 @@ function Home() {
         {/* Show "Cart[0]" on the left in responsive mode */}
         {isCollapsed && (
           <Nav className="responsive-cart">
-            <Nav.Link as={Link} to="/cart">SignUp</Nav.Link>
+            <Nav.Link as={Link} to="/Login">SignUp</Nav.Link>
           </Nav>
         )}
 

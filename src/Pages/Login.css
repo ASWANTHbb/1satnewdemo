@@ -1,6 +1,11 @@
 .bgfoot {
     background-color: #081f34;
 }
+.backicon{
+    font-size: 4vh;
+    margin-left: 5vh;
+    padding-top: 3vh;
+}
 
 .log-container {
     height: 100vh;
@@ -28,12 +33,12 @@
 }
 
 .nostr {
-    margin-top: 2rem;
+  margin-top: 2rem;
 
    border: 1px solid  #F7931A;
    border-radius: 100px;
    height: 100%;
-   width: 75%;
+   width: 85%;
    color: #F7931A;
    font-family: 'Space Mono';
 }
@@ -42,11 +47,8 @@
     color: white; /* Brighter orange on hover */
 }
 .nossub{
-   
-    border: 1px solid #F7931A;
     border-radius: 100px;
     height: 100%;
-    width: 75%;
     color: #F7931A;
     font-family: 'Space Mono';
 }
