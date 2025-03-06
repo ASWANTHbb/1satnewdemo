@@ -24,7 +24,7 @@
 .alien1 {
     position: absolute;
     left: 30%;
-    top: 260px;
+    top: 240px;
     max-height: 84vh;
     width: 80vh;
 }
@@ -54,7 +54,7 @@
 
 .earth {
     position: absolute;
-    top: 900px;
+    top: 820px;
     max-height: 84vh;
     width: 50vh;
     animation: spinEarth 10s linear infinite;

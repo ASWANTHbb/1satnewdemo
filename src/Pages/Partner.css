@@ -1,0 +1,118 @@
+/* Custom Card Styling */
+.custom-card {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+    background: transparent; /* Make background transparent */
+    border: 1px solid #f7931a; /* Add 1px orange border */
+    margin-bottom: 20px;
+  }
+  
+  .custom-card .icon {
+    font-size: 2rem;
+    color: #f7931a;
+  }
+  
+  .custom-card .card-subtitle {
+    font-size: 2rem;
+    color: #f7931a;
+  }
+  
+  .custom-card .card-text {
+    font-size: 1rem;
+    color: #F7931A;
+  }
+  
+  /* How It Works Section */
+  .how-it-works {
+    width: 100%;
+    height: auto;
+    border: 1px solid #f7931a; /* Add 1px orange border */
+    margin: 0 auto;
+    background: transparent; /* Make background transparent */
+  }
+  
+  .how-it-works .step-number {
+    color: #f7931a;
+    font-size: 2rem;
+  }
+  
+  .how-it-works .step-title {
+    color: #f7931a;
+    font-size: 1.2rem;
+  }
+  
+  .how-it-works .step-description {
+    font-size: 0.9rem;
+    color: #F7931A;
+  }
+  
+  /* Bitcoin Button */
+  .bitcoin-btn {
+    border: 4px double #f7931a;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #f7931a;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 200px;
+    max-width: 100%;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .custom-card .card-subtitle {
+      font-size: 1.5rem;
+    }
+  
+    .how-it-works .step-number {
+      font-size: 1.5rem;
+    }
+  
+    .how-it-works .step-title {
+      font-size: 1rem;
+    }
+  
+    .how-it-works .step-description {
+      font-size: 0.8rem;
+    }
+  
+    .bitcoin-btn {
+      width: 150px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .custom-card .card-subtitle {
+      font-size: 1.2rem;
+    }
+  
+    .how-it-works .step-number {
+      font-size: 1.2rem;
+    }
+  
+    .how-it-works .step-title {
+      font-size: 0.9rem;
+    }
+  
+    .how-it-works .step-description {
+      font-size: 0.7rem;
+    }
+  
+    .bitcoin-btn {
+      width: 120px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  .bitcoin-btn:hover{
+    background-color: #f7931a;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  .mainback{
+    background-image: url('../assets/landingbg.jpg');
+  }

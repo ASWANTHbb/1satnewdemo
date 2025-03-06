@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight, faShop } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+
 import { SERVER_URL } from '../api/serverUrl';
 
 function Covering() {
@@ -44,6 +45,43 @@ function Covering() {
       return <div>Loading...</div>; 
    }
 
+
+import { SERVER_URL } from '../api/serverUrl'; // Import the SERVER_URL
+
+function Covering() {
+   const [products, setProducts] = useState([]); // Ensure it's an array by default
+   const [loading, setLoading] = useState(true); // Loading state
+
+   useEffect(() => {
+      document.body.style.overflowX = 'hidden';
+      setLoading(true); // Set loading state to true when starting to fetch
+      axios.get(`${SERVER_URL}/products`) // API request to get products
+         .then((response) => {
+            console.log('API Response:', response.data); // Log the API response to verify its structure
+            // Access the products array inside the response data object
+            if (response.data && Array.isArray(response.data.products)) {
+               setProducts(response.data.products); // Set the products array from response
+            } else {
+               console.error('API response.products is not an array:', response.data);
+               setProducts([]); // In case the response is not an array, set it to an empty array
+            }
+            setLoading(false); // Set loading state to false once the data is fetched
+         })
+         .catch((error) => {
+            console.error('Error fetching products:', error);
+            setLoading(false); // Set loading state to false in case of an error
+         });
+      
+      return () => {
+        document.body.style.overflowX = 'auto';
+      };
+   }, []); // Empty array to run this effect only once when the component mounts
+
+   if (loading) {
+      return <div>Loading...</div>; // Display loading state while fetching data
+   }
+
+
    return (
       <div>
          <div className='bod'>
@@ -64,6 +102,7 @@ function Covering() {
                </div>
             </div>
          </div>
+
          
          <div style={{ backgroundColor: '#081f34' }}>
             <div className="flex-column d-flex justify-content-center align-items-center">
@@ -71,6 +110,12 @@ function Covering() {
                   <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}>COVERINGS</Link> | 
                   <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}>ACCESSORIES</Link> | 
                   <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}>OBJECTS</Link>
+
+         <div style={{ backgroundColor: '#081f34' }}>
+            <div className="flex-column d-flex justify-content-center align-items-center">
+               <p className='access d-flex justify-content-center align-items-center text-center' style={{ color: '#F7931A' }}>
+                  <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}>COVERINGS</Link> | <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}>ACCESSORIES</Link> | <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}>OBJECTS</Link>
+
                </p>
 
                <hr className='hr1' style={{
@@ -92,6 +137,7 @@ function Covering() {
                {/* Product Rows */}
                <div className="row mt-5 w-100" style={{ marginLeft: '100px' }}>
                   {products.length > 0 ? (
+
                      (products || []).map((product, index) => ( // ✅ Prevent map error
                         <div className="col-12 col-md-3 mb-4 mb-md-0 text-center" key={index}>
                           
@@ -105,6 +151,15 @@ function Covering() {
 />
 
 
+
+                     products.map((product, index) => (
+                        <div className="col-12 col-md-3 mb-4 mb-md-0 text-center" key={index}>
+                           <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                              {/* Display GIF with dynamic URL */}
+                              <Link to={`/BodilyCovering/${product.id}`} style={{ textDecoration: 'none' }}>
+                                 <img src={`${SERVER_URL}/uploads/${product.image}`} alt={product.name} className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+                              </Link>
+
                            </div>
                            <div className='mt-3' style={{ color: '#F7931A' }}>
                               <h6 style={{ color: '#F7931A', marginBottom: '0' }}>{product.name}</h6>
@@ -116,6 +171,7 @@ function Covering() {
                         </div>
                      ))
                   ) : (
+
                      <div>No products available.</div> 
                   )}
                </div>
@@ -123,6 +179,16 @@ function Covering() {
          </div>
 
          <div className='footback'><Footer /></div>
+
+                     <div>No products available.</div> // Display this message if products array is empty
+                  )}
+               </div>
+
+            </div>
+            <div className='footback'> <Footer /></div>
+         </div>
+        
+
       </div>
    );
 }

@@ -1,6 +1,11 @@
 .bgfoot {
     background-color: #081f34;
 }
+.backicon{
+    font-size: 4vh;
+    margin-left: 5vh;
+    padding-top: 3vh;
+}
 
 .log-container {
     height: 100vh;
@@ -28,16 +33,28 @@
 }
 
 .nostr {
-    margin-top: 2rem;
-    border: 1px solid #F7931A;
+  margin-top: 2rem;
+
+   border: 1px solid  #F7931A;
+   border-radius: 100px;
+   height: 100%;
+   width: 85%;
+   color: #F7931A;
+   font-family: 'Space Mono';
+}
+.nostr:hover{
+    background-color: orange; /* Darker blue on hover */
+    color: white; /* Brighter orange on hover */
+}
+.nossub{
     border-radius: 100px;
     height: 100%;
-    width: 75%;
     color: #F7931A;
     font-family: 'Space Mono';
 }
 
 .nossub {
+
     font-size: 0.7rem;
     font-family: 'Space Mono';
 }
@@ -51,6 +68,29 @@
 
 /* Buttons inside the group */
 .logbtn .btn {
+
+    background-color: #0c151e; /* Blue background color */
+    color: #F7931A; /* Orange text color */
+    border-radius: 20px; /* Curved borders */
+    padding: 0.5rem 1rem; /* Decrease button size */
+    font-size: 1rem; /* Decrease font size */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-family: 'Space Mono', monospace; /* Font family with fallback */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    margin: 0; /* Remove any default margin */
+}
+.logbtn .btn:hover{
+    color: #FFA500; /* Brighter orange on hover */
+    border: 1px solid orange;
+}
+
+/* Optional: Add hover effects */
+.logbtn .btn:hover {
+    background-color: #081f34; /* Darker blue on hover */
+    color: #FFA500; /* Brighter orange on hover */
+   
+
     background-color: #0c151e;
     color: #F7931A;
     border-radius: 20px;
