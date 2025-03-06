@@ -31,6 +31,10 @@
    color: #F7931A;
    font-family: 'Space Mono';
 }
+.nostr:hover{
+    background-color: orange; /* Darker blue on hover */
+    color: white; /* Brighter orange on hover */
+}
 .nossub{
    
     font-size: 0.7rem;
@@ -53,6 +57,10 @@
     font-family: 'Space Mono', monospace; /* Font family with fallback */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
     margin: 0; /* Remove any default margin */
+}
+.logbtn .btn:hover{
+    color: #FFA500; /* Brighter orange on hover */
+    border: 1px solid orange;
 }
 
 /* Optional: Add hover effects */

@@ -6,6 +6,8 @@ import btshirt from '../assets/dress.jpg';
 import { Link } from 'react-router-dom';
 import arrival from '../assets/arrival.jpg';
 import Footer from '../components/Footer'
+import Card from 'react-bootstrap/Card';
+import { Button } from 'react-bootstrap';
 function SpaceCraft() {
   const [isZoomed, setIsZoomed] = useState(false);
 
@@ -136,6 +138,47 @@ function SpaceCraft() {
         </p>
       </div>
     </div>
+    <div className="row mt-5 d-flex justify-content-between">
+              <div className="col-md-1"></div>
+              <div className="col-md-3 ">
+              <Card style={{ width: '25rem', height: '30rem', margin: 'auto', textAlign: 'center', padding: '20px',background:'none',border:'1px solid #F7931A' }}>
+      <Card.Body>
+        <Card.Title style={{ fontSize: '1.1rem', marginBottom: '60px',color:'#F7931A' }}>[PACKAGE 1]</Card.Title>
+        <Card.Subtitle className="mb-2" style={{ fontSize: '4rem', marginBottom: '15px',color:'#F7931A'}}>THE <br />QUICK LIFT</Card.Subtitle>
+        <Card.Text style={{ fontSize: '0.5', marginBottom: '20px' }}>
+          our tractor beam will lift you to the height of your choosing before gently setting you down again.
+        </Card.Text>
+        <Button  style={{ fontSize: '1.2rem', padding: '1px 20px',width:'100%' ,background:'none',border:'1px solid #F7931A' , color:'#F7931A'}}>BOOK NOW</Button>
+      </Card.Body>
+    </Card>
+              </div>
+              <div className="col-md-3 ms-auto">
+              <Card style={{ width: '25rem', height: '30rem', margin: 'auto', textAlign: 'center', padding: '20px',background:'none',border:'1px solid #F7931A' }}>
+      <Card.Body>
+        <Card.Title style={{ fontSize: '1.1rem', marginBottom: '60px',color:'#F7931A' }}>[PACKAGE 1]</Card.Title>
+        <Card.Subtitle className="mb-2" style={{ fontSize: '4rem', marginBottom: '15px',color:'#F7931A'}}>THE <br />WEEKENDER</Card.Subtitle>
+        <Card.Text style={{ fontSize: '0.5', marginBottom: '20px' }}>
+          our tractor beam will lift you to the height of your choosing before gently setting you down again.
+        </Card.Text>
+        <Button  style={{ fontSize: '1.2rem', padding: '1px 20px',width:'100%' ,background:'none',border:'1px solid #F7931A' , color:'#F7931A'}}>BOOK NOW</Button>
+      </Card.Body>
+    </Card>
+              </div>
+              <div className="col-md-3 ms-auto">
+              <Card style={{ width: '25rem', height: '30rem', margin: 'auto', textAlign: 'center', padding: '20px',background:'none',border:'1px solid #F7931A' }}>
+      <Card.Body>
+        <Card.Title style={{ fontSize: '1.1rem', marginBottom: '60px',color:'#F7931A' }}>[PACKAGE 1]</Card.Title>
+        <Card.Subtitle className="mb-2" style={{ fontSize: '4rem', marginBottom: '15px',color:'#F7931A'}}>THE <br />PERMENENT VECATION</Card.Subtitle>
+        <Card.Text style={{ fontSize: '0.5', marginBottom: '20px' }}>
+          our tractor beam will lift you to the height of your choosing before gently setting you down again.
+        </Card.Text>
+        <Button  style={{ fontSize: '1.2rem', padding: '1px 20px',width:'100%' ,background:'none',border:'1px solid #F7931A' , color:'#F7931A'}}>BOOK NOW</Button>
+      </Card.Body>
+    </Card>
+              </div>
+              <div className="col-md-1"></div>
+            </div>
+         
   
 <div className='footback'><Footer/></div>
      </div>

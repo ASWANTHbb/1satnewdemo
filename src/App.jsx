@@ -8,6 +8,9 @@ import Cart from './Pages/Cart'
 import Payment from './Pages/Payment'
 import DebitCredit from './Pages/DebitCredit'
 import Login from './Pages/Login'
+import Partner from './Pages/Partner'
+import BodilyCov from './Pages/BodilyCov'
+import PartnerReg from './Pages/PartnerReg'
 
 function App() {
 
@@ -26,6 +29,9 @@ function App() {
         <Route path='/debitcredit' element={<DebitCredit />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Login />} />
+        <Route path='/partner' element={<Partner />} />
+        <Route path='/BodilyCovering' element={<BodilyCov />} />
+        <Route path='/PartnerRegister' element={<PartnerReg />} />
 
       </Routes>
 
