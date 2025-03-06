@@ -13,7 +13,8 @@ import take from '../assets/Doormat.gif'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft, faAngleRight, faShop } from '@fortawesome/free-solid-svg-icons'
+
 
 function Covering() {
    useEffect(() => {
@@ -80,27 +81,30 @@ function Covering() {
            <img src={tshirt} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
          </div>
          <div className='mt-3' style={{ color: '#F7931A' }}> 
-           <h6 style={{ color: '#F7931A' }}>TORSO COVERING</h6>
-           <p>Sold out</p>
-         </div>
+  <h6 style={{ color: '#F7931A', marginBottom: '0' }}>TORSO COVERING</h6>
+  <p style={{ marginTop: '0', marginBottom: '0' }}><FontAwesomeIcon icon={faShop} />Espancho</p>
+  <p style={{ marginTop: '0' ,fontSize:'20px' }}>1Sat <span style={{fontSize:'10px'}}>$12</span></p>
+</div>
        </div>
        <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
          <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
            <img src={cap} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
          </div>
          <div className='mt-3' style={{ color: '#F7931A' }}> 
-           <h6 style={{ color: '#F7931A' }}>HEAD COVERING</h6>
-           <p>Sold out</p>
-           </div>
+  <h6 style={{ color: '#F7931A', marginBottom: '0' }}>HEAD COVERING</h6>
+  <p style={{ marginTop: '0', marginBottom: '0' }}><FontAwesomeIcon icon={faShop} />CAPSTORE</p>
+  <p style={{ marginTop: '0' ,fontSize:'20px' }}>1Sat <span style={{fontSize:'10px'}}>$12</span></p>
+</div>
        </div>
        <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
          <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
            <img src={hoodie} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
          </div>
          <div className='mt-3' style={{ color: '#F7931A' }}> 
-           <h6 style={{ color: '#F7931A' }}>THICKER COVERING</h6>
-           <p>Sold out</p>
-         </div>
+  <h6 style={{ color: '#F7931A', marginBottom: '0' }}>THICKER COVERING</h6>
+  <p style={{ marginTop: '0', marginBottom: '0' }}><FontAwesomeIcon icon={faShop} />BURNO</p>
+  <p style={{ marginTop: '0' ,fontSize:'20px' }}>1Sat <span style={{fontSize:'10px'}}>$12</span></p>
+</div>
        </div>
        <div className="col-12 col-md-1"></div>
      </div>
@@ -120,27 +124,30 @@ function Covering() {
            <img src={bag} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
          </div>
          <div className='mt-3' style={{ color: '#F7931A' }}> 
-           <h6 style={{ color: '#F7931A' }}>GREETINGS TOTE</h6>
-           <p>Sold out</p>
-           </div>
+  <h6 style={{ color: '#F7931A', marginBottom: '0' }}>GREETINGS TOTE</h6>
+  <p style={{ marginTop: '0', marginBottom: '0' }}><FontAwesomeIcon icon={faShop} />Espancho</p>
+  <p style={{ marginTop: '0' ,fontSize:'20px' }}>1Sat <span style={{fontSize:'10px'}}>$12</span></p>
+</div>
        </div>
        <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
          <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
            <img src={top} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
          </div>
          <div className='mt-3' style={{ color: '#F7931A' }}> 
-           <h6 style={{ color: '#F7931A' }}>RAIN REPELLER</h6>
-           <p>Sold out</p>
-           </div>
+  <h6 style={{ color: '#F7931A', marginBottom: '0' }}>UFO ATTRACTOR</h6>
+  <p style={{ marginTop: '0', marginBottom: '0' }}><FontAwesomeIcon icon={faShop} />Espancho</p>
+  <p style={{ marginTop: '0' ,fontSize:'20px' }}>1Sat <span style={{fontSize:'10px'}}>$12</span></p>
+</div>
        </div>
        <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
          <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
            <img src={umb} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
          </div>
          <div className='mt-3' style={{ color: '#F7931A' }}> 
-           <h6 style={{ color: '#F7931A' }}>UFO ATTRACTOR</h6>
-           <p>Sold out</p>
-           </div>
+  <h6 style={{ color: '#F7931A', marginBottom: '0' }}>RAIN REPPELLER</h6>
+  <p style={{ marginTop: '0', marginBottom: '0' }}><FontAwesomeIcon icon={faShop} />Espancho</p>
+  <p style={{ marginTop: '0' ,fontSize:'20px' }}>1Sat <span style={{fontSize:'10px'}}>$12</span></p>
+</div>
        </div>
        <div className="col-12 col-md-1"></div>
      </div>  
@@ -161,28 +168,31 @@ function Covering() {
          <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
            <img src={fris} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
          </div>
-         <div className='mt-3' style={{ color: '#F7931A' }}>
-           <h6 style={{ color: '#F7931A' }}>PERSONAL UFO</h6>
-           <p>Sold out</p>
-           </div>
+         <div className='mt-3' style={{ color: '#F7931A' }}> 
+  <h6 style={{ color: '#F7931A', marginBottom: '0' }}>PERSONAL UFO</h6>
+  <p style={{ marginTop: '0', marginBottom: '0' }}><FontAwesomeIcon icon={faShop} />Espancho</p>
+  <p style={{ marginTop: '0' ,fontSize:'20px' }}>1Sat <span style={{fontSize:'10px'}}>$12</span></p>
+</div>
        </div>
        <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
          <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
            <img src={doll} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
          </div>
          <div className='mt-3' style={{ color: '#F7931A' }}> 
-           <h6 style={{ color: '#F7931A' }}>DIRT RECEPTACLE</h6>
-           <p>Sold out</p>
-           </div>
+  <h6 style={{ color: '#F7931A', marginBottom: '0' }}>ANG RELIEVER</h6>
+  <p style={{ marginTop: '0', marginBottom: '0' }}><FontAwesomeIcon icon={faShop} />Espancho</p>
+  <p style={{ marginTop: '0' ,fontSize:'20px' }}>1Sat <span style={{fontSize:'10px'}}>$12</span></p>
+</div>
        </div>
        <div className="col-12 col-md-3 mb-4 mb-md-0 text-center">
          <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
            <img src={take} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
          </div>
          <div className='mt-3' style={{ color: '#F7931A' }}> 
-           <h6 style={{ color: '#F7931A' }}>ANGST RELIEVER</h6>
-           <p>Sold out</p>
-           </div>
+  <h6 style={{ color: '#F7931A', marginBottom: '0' }}>DIRT RECEPTACLE</h6>
+  <p style={{ marginTop: '0', marginBottom: '0' }}><FontAwesomeIcon icon={faShop} />Espancho</p>
+  <p style={{ marginTop: '0' ,fontSize:'20px' }}>1Sat <span style={{fontSize:'10px'}}>$12</span></p>
+</div>
        </div>
        <div className="col-12 col-md-1"></div>
      </div>     
