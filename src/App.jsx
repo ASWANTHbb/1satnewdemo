@@ -10,7 +10,7 @@ import Cart from './Pages/Cart';
 import Payment from './Pages/Payment';
 import DebitCredit from './Pages/DebitCredit';
 import Login from './Pages/Login';
-
+import Map from './components/Map';
 function App() {
   return (
     <>
@@ -27,6 +27,7 @@ function App() {
         <Route path="/debitcredit" element={<DebitCredit />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Login />} />
+        <Route path="/map" element={<Map />} />
       </Routes>
     </>
   );
