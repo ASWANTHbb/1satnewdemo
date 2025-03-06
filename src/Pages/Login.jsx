@@ -9,6 +9,9 @@ import { Link } from 'react-router-dom';
 import img from '../assets/login.png';
 import Footer from '../components/Footer';
 import { toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
+faArrowLeft
 
 function Login() {
     const navigate = useNavigate(); // For navigation
@@ -74,6 +77,7 @@ function Login() {
     return (
         <>
             <div className='bgfoot'>
+              <div className='backicon'><Link to={'/'}><FontAwesomeIcon icon={faArrowLeft} /></Link></div>
                 <div className="log-container">
                     <div className='row'>
                         <div className="col-md-6">

@@ -1,67 +1,111 @@
 /* App.css */
-.cartbg{
+.cartbg {
   background-color: #081f34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App {
-    text-align: center;
-    
-  }
-  
-  .shopping-cart {
-    text-align: center;
-    
-  }
-  
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-cart {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.shopping-cart h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3vh;
+  color: orange;
+  margin: 10px 0;
+}
+
+.shopping-cart p {
+  font-family: 'Courier New', Courier, monospace;
+  color: orange;
+  margin: 10px 0;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid orange;
+  padding: 10px 20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: orange;
+  border-radius: 30px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: orange;
+  color: #081f34;
+}
+
+.footer-content {
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.head {
+  color: black;
+}
+
+.button {
+  border-radius: 10vh;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .shopping-cart h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 3vh;
-    margin-right: 157vh;
+    font-size: 2.5vh;
+    margin-right: 0;
     margin-top: 10vh;
-    color: orange !important;
-    font-family: 'Bebas Neue', cursive;
-  }
-  
-  .shopping-cart p {
-    font-family: 'Courier New', Courier, monospace;
-    color: orange;
-    margin-right: 121vh;
-  }
-  
-  button {
-    background-color: transparent;
-    border: 1px solid orange;
-    padding: 10px 20px;
-    font-family: 'Courier New', Courier, monospace;
-    color: orange;
-    border-radius: 30px;
-    
-    
-  }
-   
-  .footer-content {
-    font-family: 'Courier New', Courier, monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .footer-content p {
-    margin: 0;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-    }
-  }
-  .head{
-    color: black;
-  }
-  .button{
-    margin-right: 155vh;
-    border-radius: 10vh;
   }
 
- 
+  .shopping-cart p {
+    margin-right: 0;
+  }
+
+  .button {
+    margin-right: 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .shopping-cart h1 {
+    font-size: 2vh;
+    margin-top: 10vh;
+  }
+
+  .shopping-cart p {
+    font-size: 1.5vh;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 1.5vh;
+  }
+}

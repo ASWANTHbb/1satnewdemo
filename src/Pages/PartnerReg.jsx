@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import '../Pages/PartnerReg.css';
+import Footer from '../components/Footer';
 
 function PartnerReg() {
   // State to store the input values
@@ -85,7 +86,7 @@ function PartnerReg() {
 
   return (
     <>
-      <div>
+      <div className='mainback'>
         <Header />
         <div className="partnerReg d-flex justify-content-center align-items-center flex-column mt-5">
           <h1 style={{ color: '#F7931A' }}>Partner Registration</h1>
@@ -124,7 +125,7 @@ function PartnerReg() {
           <input
             type="text"
             name="website"
-            placeholder="website"
+            placeholder="website(optional)"
             className="input1"
             value={formData.website}
             onChange={handleInputChange}
@@ -134,6 +135,7 @@ function PartnerReg() {
             Join now
           </button>
         </div>
+        <div className='footback'><Footer/></div>
       </div>
     </>
   );

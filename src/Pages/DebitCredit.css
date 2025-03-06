@@ -2,6 +2,11 @@
 .bg {
     background-color: #081f34;   
   }
+  .back{
+    margin-left: 3vh;
+    padding-top: 3vh;
+    font-size: 3vh;
+  }
   
   .dc-container {
     display: flex;

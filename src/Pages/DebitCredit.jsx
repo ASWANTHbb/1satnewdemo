@@ -1,11 +1,18 @@
 import React from "react";
 import "./DebitCredit.css";
 import Footer from "../components/Footer";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
+faArrowLeft
+import { Link } from "react-router-dom";
+
 
 const PaymentForm = () => {
   return (
     <div className="bg">
+       <div className='back'><Link to={'/Payment'}><FontAwesomeIcon icon={faArrowLeft} /></Link></div>
         <div className="dc-container">
+       
           <div className="payment-box">
             <h2 className="title">DEBIT/CREDIT CARD</h2>
             

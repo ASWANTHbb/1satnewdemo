@@ -10,17 +10,22 @@
     font-family: 'Bebas Neue', cursive;
     border-radius: 0px;
   }
+  .backarrow{
+    font-size: large;
+    margin-right: 190vh;
+    padding-top: 2vh;
+  }
   
   .payment-box {
     width: 100%;
     max-width: 400px;
     background-color: transparent;
-    color: orange;
+    color: white;
     padding: 1.0rem;
     border: 1px solid orange;
     box-shadow: 0 4px 10px rgba(255, 165, 0, 0.2);
     text-align: center;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'space mono', sans-serif;
     margin-top: 20vh;
   }
   
