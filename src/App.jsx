@@ -15,14 +15,8 @@ import { ToastContainer } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify styles
 import './App.css';
 
-import Home from './Pages/Home';
-import Covering from './Pages/Covering';
-import SpaceCraft from './Pages/SpaceCraft';
-import History from './Pages/History';
-import Cart from './Pages/Cart';
-import Payment from './Pages/Payment';
-import DebitCredit from './Pages/DebitCredit';
-import Login from './Pages/Login';
+
+
 import Map from './components/Map';
 
 function App() {
