@@ -106,7 +106,7 @@ function Home() {
             <div className='starbg'>
             <div className='earth-container'>
             <div className="white-flash"></div> {/* White flash overlay */}
-                <Link to={'/Map'}><img src={earth} alt="Alien" className='earth' onClick={handleEarthClick} /></Link>
+                <img src={earth} alt="Alien" className='earth' onClick={handleEarthClick} />
                 </div>
                 <div className='greet'>GREETINGS, EARTHLINGS!</div>
                 <div className='greet1'>What does a highly advanced civilization have to do to get noticed around here?<br /><br />

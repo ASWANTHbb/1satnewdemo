@@ -9,6 +9,7 @@ import icon1 from "../assets/icon1.png";
 import icon2 from "../assets/icon2.png";
 import icon3 from "../assets/icon3.png";
 import Footer from './Footer';
+import Header from "../components/Header"
 
 // Store icons in an array
 const iconsArray = [icon1, icon2, icon3];
@@ -63,7 +64,8 @@ function Map() {
 
   return (
 <div className='mainbg' style={{backgroundColor:'#081f34'}}>
-      <div>
+  <Header/>
+      <div className='p-5'>
         
   <MapContainer center={center} zoom={ZOOM_LEVEL} ref={mapRef} style={{ height: "450px", width: "100%" }}>
     <TileLayer url={osm.maptiler.url} attribution={osm.maptiler.attribution} />
@@ -85,8 +87,9 @@ function Map() {
   
   </MapContainer>
   
-  <div className='footback'><Footer/></div>
+  
   </div>
+  <div className='footback'><Footer/></div>
 </div>
     
   )

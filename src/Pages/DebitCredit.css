@@ -198,6 +198,31 @@
     color: #0a0f24;
     font-family: 'Space Mono', monospace;
   }
+
+  .card-type-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+  
+  .card-type-btn {
+    padding: 10px 20px;
+    border: 2px solid orange;
+    background-color: #081f34;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .card-type-btn.active {
+    background-color: #081f34;
+    color: orange;
+    border-color: orange;
+  }
+  
   
   /* Responsive Design */
   @media (max-width: 480px) {

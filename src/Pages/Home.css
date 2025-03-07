@@ -51,7 +51,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 60vh;
 }
 
 .earth {
@@ -63,7 +62,7 @@
 }
 
 .earth.animate {
-  transform: scale(1); /* Zoom effect */
+  transform: scale(6); /* Zoom effect */
 }
 
 .white-flash {

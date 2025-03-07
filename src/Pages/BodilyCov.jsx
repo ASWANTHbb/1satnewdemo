@@ -36,7 +36,7 @@ function BodilyCov() {
       <Header />
       <div className='container mt-4'>
         <h6 className='text-warning text-center text-md-start px-md-5'>
-          BODILY COVERINGS &nbsp; &gt; &nbsp; THICKER COVERING
+         <Link to={'/covering'} style={{textDecoration:'none',color:'#F7931A'}}> BODILY COVERINGS</Link> &nbsp; &gt; &nbsp; THICKER COVERING
         </h6>
         <div className='row align-items-center justify-content-center text-center'>
           <div className='col-12 col-md-6 d-flex justify-content-center'>
