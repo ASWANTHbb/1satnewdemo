@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../Pages/Home.css';
 import alien from '../assets/alien.png';
-import earth from '../assets/earth.png';
+import earth from '../assets/earth.gif';
 import footbg from '../assets/bgimg1.png';
 import Accordion from 'react-bootstrap/Accordion';
 import Footer from '../components/Footer';
@@ -42,6 +42,21 @@ function Home() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const handleEarthClick = () => {
+    const earthImg = document.querySelector('.earth');
+    const flash = document.querySelector('.white-flash');
+  
+    if (earthImg && flash) {
+      earthImg.classList.add('animate'); // Zoom effect
+      flash.classList.add('show'); // White flash effect
+  
+      setTimeout(() => {
+        window.location.href = "/Map"; // Redirect after animation
+      }, 900); // Adjust timing to match animation
+    }
+  };
+  
     return (
         <>
             <div className='homebg'>
@@ -90,7 +105,8 @@ function Home() {
             </div>
             <div className='starbg'>
             <div className='earth-container'>
-                <img src={earth} alt="Alien" className='earth' />
+            <div className="white-flash"></div> {/* White flash overlay */}
+                <Link to={'/Map'}><img src={earth} alt="Alien" className='earth' onClick={handleEarthClick} /></Link>
                 </div>
                 <div className='greet'>GREETINGS, EARTHLINGS!</div>
                 <div className='greet1'>What does a highly advanced civilization have to do to get noticed around here?<br /><br />
