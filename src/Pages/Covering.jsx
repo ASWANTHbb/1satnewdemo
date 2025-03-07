@@ -115,8 +115,9 @@ function Covering() {
                   )}
                </div>
             </div>
+            <div className='footback'><Footer /></div>
          </div>
-         <div className='footback'><Footer /></div>
+        
       </div>
    );
 }

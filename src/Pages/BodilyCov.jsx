@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import gif from '../assets/hoodie.gif';
 import Footer from '../components/Footer';
@@ -28,7 +28,7 @@ function BodilyCov() {
 
   const handleAddToCart = () => {
     localStorage.setItem('cartItem', JSON.stringify({ image: gif, name: 'Thicker Covering', price: 64 }));
-    navigate('/cart');
+    navigate('/Payment');
   };
 
   return (
@@ -65,7 +65,7 @@ function BodilyCov() {
                 style={{ transition: '0.3s ease-in-out' }}
                 onClick={handleAddToCart}
               >
-                Add to cart
+               Buy Now
               </button>
             </div>
           </div>

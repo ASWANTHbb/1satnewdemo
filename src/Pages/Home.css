@@ -47,18 +47,39 @@
 }
 
 .earth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 60vh;
 }
 
 .earth {
-    position: absolute;
-    top: 820px;
-    max-height: 84vh;
-    width: 50vh;
-    animation: spinEarth 10s linear infinite;
+  transition: transform 5s ease-in-out;
+  cursor: pointer;
+  position: absolute;
+  top: 10vh;
+  animation: spinEarth 10s linear infinite;
 }
+
+.earth.animate {
+  transform: scale(1); /* Zoom effect */
+}
+
+.white-flash {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 5;
+  transition: opacity 5.5s ease-in-out;
+  z-index: 1;
+}
+
+.white-flash.show {
+  opacity: 5;
+}
+
 
 .greet {
     display: flex;

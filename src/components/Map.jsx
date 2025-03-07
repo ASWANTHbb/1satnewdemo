@@ -8,6 +8,7 @@ import axios from 'axios';
 import icon1 from "../assets/icon1.png";
 import icon2 from "../assets/icon2.png";
 import icon3 from "../assets/icon3.png";
+import Footer from './Footer';
 
 // Store icons in an array
 const iconsArray = [icon1, icon2, icon3];
@@ -61,25 +62,31 @@ function Map() {
   
 
   return (
-    <div>
-      
-<MapContainer center={center} zoom={ZOOM_LEVEL} ref={mapRef} style={{ height: "450px", width: "100%" }}>
-  <TileLayer url={osm.maptiler.url} attribution={osm.maptiler.attribution} />
+<div className='mainbg' style={{backgroundColor:'#081f34'}}>
+      <div>
+        
+  <MapContainer center={center} zoom={ZOOM_LEVEL} ref={mapRef} style={{ height: "450px", width: "100%" }}>
+    <TileLayer url={osm.maptiler.url} attribution={osm.maptiler.attribution} />
+    
+    {/* Random Icons for Shop Markers */}
+    {shops.map((shop, index) => (
+  <Marker key={index} position={[shop.latitude, shop.longitude]} icon={getRandomIcon()}>
+  <Tooltip direction="top" offset={[0, -10]} opacity={1} permanent={false}>
+  <b>{shop.productName}</b> {/* Product name on hover */}
+  </Tooltip>
+  <Popup>
+  <b>{shop.productName}</b> <br /> 
+  {shop.shopName} <br />
+  {shop.address}
+  </Popup>
+  </Marker>
   
-  {/* Random Icons for Shop Markers */}
-  {shops.map((shop, index) => (
-<Marker key={index} position={[shop.latitude, shop.longitude]} icon={getRandomIcon()}>
-<Tooltip direction="top" offset={[0, -10]} opacity={1} permanent={false}>
-<b>{shop.productName}</b> {/* Product name on hover */}
-</Tooltip>
-<Popup>
-<b>{shop.productName}</b> <br /> 
-{shop.shopName} <br />
-{shop.address}
-</Popup>
-</Marker>
-))}
-</MapContainer>
+  ))}
+  
+  </MapContainer>
+  
+  <div className='footback'><Footer/></div>
+  </div>
 </div>
     
   )
