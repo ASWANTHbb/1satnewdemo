@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 faArrowLeft
+import gpay from '../assets/gpay.png';
+import phonepay from '../assets/phonepay.png';
 
 const PaymentPage = () => {
   return (
     <div className="payment-container">
-      <div className='backarrow'><Link to={'/Cart'}><FontAwesomeIcon icon={faArrowLeft} /></Link></div>
+      <div className='backarrow'><Link to={'/BodilyCovering/:id'}><FontAwesomeIcon icon={faArrowLeft} /></Link></div>
       <div className="payment-box">
         <h2 className="title">CHOOSE PAYMENT OPTION</h2>
 
@@ -23,13 +25,13 @@ const PaymentPage = () => {
         <div className="upi-text">Pay by any UPI app</div>
 
         <button className="upi-button">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Google_Pay_Logo.svg" alt="GPay" className="icon" /> G Pay
+          <img src={gpay} alt="GPay" className="icon"/>
         </button>
         <button className="upi-button">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Paytm_logo.png" alt="Paytm" className="icon" /> Paytm
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Paytm_logo.png" alt="Paytm" className="icon" />
         </button>
         <button className="upi-button">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/PhonePe_Logo.png" alt="PhonePe" className="icon" /> PhonePe
+          <img src={phonepay} alt="PhonePe" className="icon" />
         </button>
       </div>
 

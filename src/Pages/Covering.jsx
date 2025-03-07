@@ -86,7 +86,7 @@ function Covering() {
                </div>
 
                {/* Product Rows */}
-               <div className="row mt-5 w-100" style={{ marginLeft: '100px' }}>
+               <div className="row mt-1 w-100">
                   {products.length > 0 ? (
                      products.map((product, index) => (
                         <div className="col-12 col-md-3 mb-4 mb-md-0 text-center" key={index}>
