@@ -1,13 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Header from '../components/Header';
-import gif from '../assets/hoodie.gif';
 import Footer from '../components/Footer';
 
+const SERVER_URL = "http://localhost:4000"; // Server URL
+
 function BodilyCov() {
+  const { id } = useParams(); // Get product ID from URL
+  const [product, setProduct] = useState(null);
   const [time, setTime] = useState("00:30:22");
   const navigate = useNavigate();
 
+  // Fetch product data
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch(`${SERVER_URL}/products/${id}`);
+        const data = await response.json();
+        if (data.success) {
+          setProduct(data.product);
+        } else {
+          console.error("Product not found");
+        }
+      } catch (error) {
+        console.error("Error fetching product:", error);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  // Countdown Timer
   useEffect(() => {
     const interval = setInterval(() => {
       setTime((prevTime) => {
@@ -27,22 +50,32 @@ function BodilyCov() {
   }, []);
 
   const handleAddToCart = () => {
-    localStorage.setItem('cartItem', JSON.stringify({ image: gif, name: 'Thicker Covering', price: 64 }));
+    if (!product) return;
+
+    localStorage.setItem('cartItem', JSON.stringify({ 
+      image: `${SERVER_URL}${product.gifUrl}`, 
+      name: product.name, 
+      price: product.price 
+    }));
     navigate('/Payment');
   };
+
+  if (!product) {
+    return <h2 className="text-center text-warning mt-5">Loading product details...</h2>;
+  }
 
   return (
     <div className='bg container-fluid'>
       <Header />
       <div className='container mt-4'>
         <h6 className='text-warning text-center text-md-start px-md-5'>
-         <Link to={'/covering'} style={{textDecoration:'none',color:'#F7931A'}}> BODILY COVERINGS</Link> &nbsp; &gt; &nbsp; THICKER COVERING
+         <Link to={'/covering'} style={{textDecoration:'none',color:'#F7931A'}}> BODILY COVERINGS</Link> &nbsp; &gt; &nbsp; {product.name}
         </h6>
         <div className='row align-items-center justify-content-center text-center'>
           <div className='col-12 col-md-6 d-flex justify-content-center'>
             <img 
-              src={gif} 
-              alt='no image' 
+              src={`${SERVER_URL}${product.gifUrl}`} 
+              alt={product.name} 
               className='img-fluid rounded shadow-lg' 
               style={{ maxHeight: '400px', width: '100%', objectFit: 'cover' }} 
             />
@@ -54,10 +87,10 @@ function BodilyCov() {
               <p className='display-6 fw-bold'>{time}</p>
             </div>
             <div className='d-flex flex-column align-items-start w-100 p-3'>
-              <h2 className='text-warning text-center text-md-start'>THICKER COVERING</h2>
-              <h5 className='text-warning text-center text-md-start'>$64</h5>
-              <p className=' text-center text-md-start' style={{ fontSize: '15px' }}>
-                Not all humans believe in us, but we believe in you! The perfect hoodie to share in our excitement that we all exist.
+              <h2 className='text-warning text-center text-md-start'>{product.name}</h2>
+              <h5 className='text-warning text-center text-md-start'>${product.price}</h5>
+              <p className='text-center text-md-start' style={{ fontSize: '15px' }}>
+                {product.description}
               </p>
               <p className='fw-bold text-center text-md-start'>BURNO STUDIOS</p>
               <button 

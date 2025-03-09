@@ -7,6 +7,7 @@
   width: 100%;
   border-bottom: 1px solid #F7931A;
   position: relative;
+  
 }
 
 #visit {
@@ -19,6 +20,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  text-shadow: #081f34;
 }
 
 .spacecraft {
@@ -26,11 +28,13 @@
   white-space: nowrap;
   line-height: 1.2;
   margin: 0;
+  text-shadow: #081f34;
 }
 
 .sentence1 {
   font-size: 1.2rem;
   margin-top: 6rem;
+  text-shadow: black;
 }
 
 /* Media Queries for Responsiveness */
@@ -142,7 +146,6 @@
 
 .bgimg1 {
   background-color: #081f34;
-  padding: 3rem 0;
   height: auto;
 }
 

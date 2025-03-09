@@ -135,7 +135,7 @@ function History() {
         <Card.Text style={{ fontSize: '0.5', marginBottom: '20px' }}>
           Topline information about our existence.
         </Card.Text>
-        <Button  style={{ fontSize: '1.2rem', padding: '1px 20px',width:'100%' ,background:'none',border:'1px solid #F7931A' , color:'#F7931A'}}>WATCH NOW</Button>
+        <Button className='mt-4'  style={{ fontSize: '1.2rem', padding: '1px 20px',width:'100%' ,background:'none',border:'1px solid #F7931A' , color:'#F7931A'}}>WATCH NOW</Button>
       </Card.Body>
     </Card>
               </div>
@@ -147,7 +147,7 @@ function History() {
         <Card.Text style={{ fontSize: '0.5', marginBottom: '20px' }}>
         A complete overview of our time on and off Earth.
         </Card.Text>
-        <p  style={{ fontSize: '1.2rem', padding: '1px 20px',width:'100%' ,color:'#F7931A'}}>[ COMING SOON ]</p>
+        <p className='mt-5'  style={{ fontSize: '1.2rem', padding: '1px 20px',width:'100%' ,color:'#F7931A'}}>[ COMING SOON ]</p>
       </Card.Body>
     </Card>
               </div>

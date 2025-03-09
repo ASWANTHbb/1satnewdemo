@@ -49,16 +49,17 @@ function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
           {/* Nav links with conditional styling for responsive mode */}
           <Nav className={`nav-center mx-auto ${isCollapsed ? 'responsive-nav' : ''}`}>
-            <Nav.Link as={Link} to="/spacecraft">VISIT SPACECRAFT</Nav.Link>
+            
             <Nav.Link as={Link} to="/history">OUR HISTORY</Nav.Link>
-            <Nav.Link as={Link} to="/covering">BODILY COVERINGS</Nav.Link>
-            <Nav.Link as={Link} to="/partner">PARTNER</Nav.Link>
+            <Nav.Link as={Link} to="/addproduct">ADD PRODUCTS</Nav.Link>
+            <Nav.Link as={Link} to="/view">VIEW PRODUCTS</Nav.Link>
+            
           </Nav>
 
           {/* Show "Cart[0]" on the right in non-responsive mode */}
           {!isCollapsed && (
             <Nav>
-              <Nav.Link as={Link} to="/Login"><button className='login-btn'>Login</button></Nav.Link>
+              <Nav.Link as={Link} to="/"><button className='login-btn'>Logout</button></Nav.Link>
             </Nav>
           )}
         </Navbar.Collapse>
