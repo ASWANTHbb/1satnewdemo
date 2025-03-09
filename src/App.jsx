@@ -18,6 +18,7 @@ import './App.css';
 import Map from './components/Map';
 import AddProduct from './Pages/AddProduct';
 import ViewProduct from './Pages/ViewProduct';
+import AdminUpdate from './Pages/AdminUpdate';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         {/* <Route path="/admin" element={<AdminDashboard />} />  */}
         <Route path="/addproduct" element={<AddProduct />} />
         <Route path='/view' element={<ViewProduct/>}/>
+        <Route path='/update' element={<AdminUpdate />}/>
       </Routes>
     </>
   );
