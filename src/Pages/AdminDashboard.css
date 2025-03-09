@@ -1,0 +1,130 @@
+/* .bod {
+    background-image: url('../assets/bodybg.jpg');
+    background-size: cover; 
+    background-position: center; 
+    height: 110vh; 
+    width: 100%; 
+    border-bottom: 1px solid #F7931A;
+    position: relative; 
+  }
+  
+  #cov {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: flex-start;
+    height: auto;
+    padding: 2rem; 
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0; 
+  }
+  
+  .ring {
+    font-size: 12vw;
+    white-space: nowrap;
+    line-height: 0.9; 
+    margin: 0; 
+  }
+  
+  .sentence3 {
+    font-size: 1.2rem; 
+    margin-top: 6rem; 
+    
+  }
+  .silver{
+    margin-right: 120vh;
+    margin-top: 10vh;
+  }
+  
+  
+  
+  @media (max-width: 1200px) {
+    .ring {
+      font-size: 10vw; 
+      white-space: nowrap;
+      line-height: 1.2; 
+      margin: 0; 
+    }
+  
+    .sentence3 {
+      font-size: 1.2rem; 
+      margin-top: 1rem; 
+      padding: 10%; 
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .ring {
+      font-size: 10vw; 
+      white-space: nowrap;
+      line-height: 1.2; 
+      margin: 0; 
+    }
+  
+    .sentence3 {
+      font-size: 0.9rem; 
+      margin-top: 5rem; 
+      padding: 10%; 
+      
+      
+    }
+  
+    #cov {
+      padding: 1.5rem; 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .ring {
+      font-size: 9vw; 
+    }
+  
+    .sentence3 {
+      font-size: 0.9rem;
+    }
+  
+    #cov {
+      align-items: center;
+      text-align: center; 
+      padding: 1rem; 
+      overflow: hidden;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .ring {
+      font-size: 12vw; 
+    }
+  
+    .sentence3 {
+      font-size: 0.8rem;
+    }
+  
+    #cov {
+      padding: 0.5rem; 
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .ring{
+      font-size: 14vw;
+    }
+  
+    .sentence3 {
+      font-size: 0.7rem;
+    }
+  }
+  .access{
+    margin-top: 5%;
+  }
+  .time {
+  font-size: 24px; /* Adjust the font size as needed */
+  /* vertical-align: middle;
+} */
+
+/* /* .subscript {
+  font-size: 14px; /* Adjust the font size as needed */
+  /* vertical-align: super; /* Position just below the center */
+/* }  */ 
