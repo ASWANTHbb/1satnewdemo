@@ -10,8 +10,7 @@ import img from '../assets/login.png';
 import Footer from '../components/Footer';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
-faArrowLeft
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 function Login() {
     const navigate = useNavigate();
@@ -43,21 +42,21 @@ function Login() {
                     password: formData.password
                 });
 
-                console.log("Login Successful:", response.data);
+                console.log("Login Response:", response.data);
                 toast.success("Login Successful!");
 
-                const { token, role } = response.data;
+                const { token, existingUser } = response.data;
 
-                if (!role) {
+                if (!existingUser || !existingUser.role) {
                     throw new Error("Role is missing from response");
                 }
 
                 localStorage.setItem("token", token);
-                localStorage.setItem("role", role);
+                localStorage.setItem("role", existingUser.role);
 
-                if (role === "client") {
+                if (existingUser.role === "client") {
                     navigate("/admindashboard");
-                } else if (role === "user") {
+                } else if (existingUser.role === "user") {
                     navigate("/userdashboard");
                 } else {
                     navigate("/");
@@ -86,7 +85,9 @@ function Login() {
     return (
         <>
             <div className='bgfoot'>
-              <div className='backicon'><Link to={'/'}><FontAwesomeIcon icon={faArrowLeft} /></Link></div>
+                <div className='backicon'>
+                    <Link to={'/'}><FontAwesomeIcon icon={faArrowLeft} /></Link>
+                </div>
                 <div className="log-container">
                     <div className='row'>
                         <div className="col-md-6">
