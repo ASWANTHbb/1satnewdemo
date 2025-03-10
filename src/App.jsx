@@ -11,7 +11,7 @@ import Login from './Pages/Login';
 import Partner from './Pages/Partner';
 import BodilyCov from './Pages/BodilyCov';
 import PartnerReg from './Pages/PartnerReg';
-// import AdminDashboard from './Pages/AdminDashboard';  // Import Admin Dashboard
+import AdminDashboard from './Pages/AdminDashboard';  // Import Admin Dashboard
 import { ToastContainer } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify styles
 import './App.css';
@@ -19,6 +19,7 @@ import Map from './components/Map';
 import AddProduct from './Pages/AddProduct';
 import ViewProduct from './Pages/ViewProduct';
 import AdminUpdate from './Pages/AdminUpdate';
+
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/partner" element={<Partner />} />
         <Route path="/bodily-covering/:id" element={<BodilyCov />} />
         <Route path="/PartnerRegister" element={<PartnerReg />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
         
         {/* Admin Route */}
         {/* <Route path="/admin" element={<AdminDashboard />} />  */}

@@ -24,7 +24,7 @@
 .alien1 {
     position: absolute;
     left: 30%;
-    top: 240px;
+    top: 290px;
     max-height: 84vh;
     width: 80vh;
 }
@@ -115,7 +115,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 990px;
+    top: 150vh;
 }
 
 .faq {
@@ -238,6 +238,8 @@
   margin-bottom: 3rem;
   background-color: transparent !important; /* Make accordion background transparent */
   font-family: 'Space Mono', monospace;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .accordion-item {

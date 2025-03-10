@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // For redirecting after login
-import { SERVER_URL } from '../api/serverUrl'; // Import SERVER_URL
+import { useNavigate } from 'react-router-dom';
+import { SERVER_URL } from '../api/serverUrl';
 import '../Pages/Login.css';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -14,7 +14,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 faArrowLeft
 
 function Login() {
-    const navigate = useNavigate(); // For navigation
+    const navigate = useNavigate();
     const [isLogin, setIsLogin] = useState(true);
     const [formData, setFormData] = useState({
         email: '',
@@ -34,25 +34,35 @@ function Login() {
         setFormData({ ...formData, [name]: value });
     };
 
-    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             if (isLogin) {
-                // Login API Call
                 const response = await axios.post(`${SERVER_URL}/login`, {
                     email: formData.email,
                     password: formData.password
                 });
-                
+
                 console.log("Login Successful:", response.data);
                 toast.success("Login Successful!");
-                
-                // Store token (if needed) & redirect
-                localStorage.setItem("token", response.data.token);
-                navigate("/"); // Redirect to home page after login
+
+                const { token, role } = response.data;
+
+                if (!role) {
+                    throw new Error("Role is missing from response");
+                }
+
+                localStorage.setItem("token", token);
+                localStorage.setItem("role", role);
+
+                if (role === "client") {
+                    navigate("/admindashboard");
+                } else if (role === "user") {
+                    navigate("/userdashboard");
+                } else {
+                    navigate("/");
+                }
             } else {
-                // Registration API Call
                 if (formData.password !== formData.confirmPassword) {
                     toast.error("Passwords do not match!");
                     return;
@@ -64,9 +74,8 @@ function Login() {
                 });
 
                 console.log("Registration Successful:", response.data);
-              toast.success("Registration Successful!");
-                
-                setIsLogin(true); // Switch to login view after successful registration
+                toast.success("Registration Successful!");
+                setIsLogin(true);
             }
         } catch (error) {
             console.error("Error:", error.response?.data?.error || error.message);
@@ -155,7 +164,7 @@ function Login() {
                             </div>
                         </div>
                         <div className="col-md-6">
-                            <img src={img} alt="no image" style={{ height: '70vh', width: '90%', marginTop: '4.5rem' }} />
+                            <img src={img} alt="no image" style={{ height: '70vh', width: '100%', marginTop: '4.5rem' }} />
                         </div>
                     </div>
                 </div>

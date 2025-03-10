@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AdminHeader from '../components/AdminHeader';
 import Footer from '../components/Footer';
+import { SERVER_URL } from "../api/serverUrl";
 
 const regexPatterns = {
   name: /^[A-Za-z0-9\s]+$/,
@@ -51,17 +52,60 @@ function AddProduct() {
     return true;
   };
 
-  const handleSubmit = () => {
-    if (validateForm()) {
+  const handleSubmit = async () => {
+    if (!validateForm()) return;
+
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      toast.error("Unauthorized: No token found");
+      return;
+    }
+
+    const formData = new FormData();
+    Object.keys(product).forEach((key) => {
+      formData.append(key, product[key]);
+    });
+
+    if (gifFile) {
+      formData.append("gif", gifFile);
+    }
+
+    try {
+      const response = await fetch(`${SERVER_URL}/products/add`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to add product");
+      }
+
+      const result = await response.json();
       toast.success("Product added successfully!");
-      console.log("Product Data:", product);
+      console.log("Product Data:", result);
+
+      setProduct({
+        name: "", description: "", price: "", count: "", 
+        availableTimeStart: "", availableTimeEnd: "", duration: "", 
+        shopName: "", location: "", address: "", latitude: "", longitude: "", 
+        country: "", city: ""
+      });
+      setGifFile(null);
+    } catch (error) {
+      toast.error(error.message);
+      console.error("Error:", error);
     }
   };
 
   return (
     <>
-      <div className="container-fluid" style={{backgroundColor:'#081f34'}}>
-        <AdminHeader/>
+      <div className="container-fluid" style={{ backgroundColor: '#081f34' }}>
+        <AdminHeader />
         <h1 className="text-center" style={{ color: '#F7931A' }}>ADD NEW PRODUCT</h1>
         <div className="row d-flex mt-5">
           <div className="col-lg-3"></div>
@@ -69,14 +113,25 @@ function AddProduct() {
             <Form>
               {Object.keys(product).map((key) => (
                 <Form.Group key={key} className="mb-3">
-                  <Form.Label className='text-orange'>{key} :</Form.Label >
-                  <Form.Control className='border rounded p-3 text-orange' type="text" placeholder={`Enter ${key}`}
-                    value={product[key]} name={key} onChange={handleChange} />
+                  <Form.Label className='text-orange'>{key} :</Form.Label>
+                  <Form.Control 
+                    className='border rounded p-3 text-orange' 
+                    type="text" 
+                    placeholder={`Enter ${key}`}
+                    value={product[key]} 
+                    name={key} 
+                    onChange={handleChange} 
+                  />
                 </Form.Group>
               ))}
               <Form.Group className="mb-3">
                 <Form.Label className='text-orange'>Upload GIF:</Form.Label>
-                <Form.Control className='border rounded p-3 text-orange' type="file" accept="image/gif" onChange={handleFileChange} />
+                <Form.Control 
+                  className='border rounded p-3 text-orange' 
+                  type="file" 
+                  accept="image/gif" 
+                  onChange={handleFileChange} 
+                />
               </Form.Group>
               <div className="d-flex justify-content-evenly">
                 <button className="btn btn-warning px-4 py-2 me-2" type="button" onClick={handleSubmit}>Add Product</button>
@@ -90,9 +145,9 @@ function AddProduct() {
             </Form>
           </div>
         </div>
-        <div className='footback'><Footer/></div>
+        <div className='footback'><Footer /></div>
       </div>
-      
+
       <ToastContainer />
     </>
   );
