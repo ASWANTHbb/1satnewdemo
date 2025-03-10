@@ -12,7 +12,6 @@ const regexPatterns = {
   description: /^.+$/, 
   price: /^\d+(\.\d{1,2})?$/, 
   count: /^\d+$/, 
-  gifUrl: /^(https?:\/\/[^\s]+)?$/, 
   availableTimeStart: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/, 
   availableTimeEnd: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/, 
   duration: /^\d+$/, 
@@ -80,15 +79,17 @@ const AdminUpdate = ({ product, onUpdate = () => {} }) => {
             <h2 className='mt-5 text-center'>Update Product</h2>
             <Form onSubmit={handleUpdate}>
               {Object.keys(regexPatterns).map((key) => (
-                <Form.Group key={key} className="mb-3">
-                  <Form.Label>{key}:</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={update[key] || ""}
-                    name={key}
-                    onChange={handleChange}
-                  />
-                </Form.Group>
+                key !== "gifUrl" && (
+                  <Form.Group key={key} className="mb-3">
+                    <Form.Label>{key}:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={update[key] || ""}
+                      name={key}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                )
               ))}
               <Form.Group className="mb-3">
                 <Form.Label>Upload GIF:</Form.Label>

@@ -39,7 +39,7 @@ function Header() {
         )}
 
         {/* Always show "1Sat" in the center */}
-        <Navbar.Brand as={Link} to="/" className={isCollapsed ? 'center-brand' : ''}>
+        <Navbar.Brand as={Link} to="/admindashboard" className={isCollapsed ? 'center-brand' : ''}>
           1SAT
         </Navbar.Brand>
 
@@ -50,7 +50,7 @@ function Header() {
           {/* Nav links with conditional styling for responsive mode */}
           <Nav className={`nav-center mx-auto ${isCollapsed ? 'responsive-nav' : ''}`}>
             
-            <Nav.Link as={Link} to="/history">OUR HISTORY</Nav.Link>
+            
             <Nav.Link as={Link} to="/addproduct">ADD PRODUCTS</Nav.Link>
             <Nav.Link as={Link} to="/view">VIEW PRODUCTS</Nav.Link>
             
