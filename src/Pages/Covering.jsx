@@ -92,14 +92,14 @@ function Covering() {
           {/* Product Rows */}
           <div className="row mt-1 w-100">
             {products.length > 0 ? (
-              products.map((product, index) => (
-                <div className="col-12 col-md-3 mb-4 mb-md-0 text-center" key={index}>
+              products.map((product) => (
+                <div className="col-12 col-md-3 mb-4 mb-md-0 text-center" key={product._id}>
                   <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Link to={`/bodily-covering/${product._id}`} style={{ textDecoration: 'none' }}>
                       <img 
-                        src={product.gifUrl ? `${SERVER_URL}${product.gifUrl}` : "fallback-image.gif"} 
-                        onError={(e) => e.target.src = "fallback-image.gif"}
-                        alt=""
+                        src={product.gifUrl?.startsWith('http') ? product.gifUrl : `${SERVER_URL}/${product.gifUrl}`} 
+                        onError={(e) => { e.target.onerror = null; e.target.src = "fallback-image.gif"; }}
+                        alt={product.name}
                         style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} 
                       />
                     </Link>
