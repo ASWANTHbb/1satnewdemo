@@ -70,6 +70,7 @@ function Login() {
 
                 localStorage.setItem("token", token);
                 localStorage.setItem("role", existingUser.role);
+                localStorage.setItem("isLoggedIn", "true"); 
 
                 if (existingUser.role === "client") {
                     navigate("/admindashboard");

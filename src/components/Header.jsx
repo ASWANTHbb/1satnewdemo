@@ -19,11 +19,18 @@ function Header() {
 
   // Handle logout
   const handleLogout = () => {
-    localStorage.removeItem('token'); // Remove token from localStorage
-    localStorage.removeItem('role'); // Remove role from localStorage
-    setIsLoggedIn(false); // Update login state
-    // Optionally, navigate to the home page or login page
-  };
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    localStorage.setItem("isLoggedIn", "false");  // ✅ Explicitly set to "false"
+
+    console.log("After Logout - isLoggedIn:", localStorage.getItem("isLoggedIn")); 
+
+    setIsLoggedIn(false);
+    window.location.reload();  // ⬅️ Forces page reload
+};
+
+
+
 
   useEffect(() => {
     const handleResize = () => {

@@ -59,15 +59,19 @@ function BodilyCov() {
   // Handle Buy Now button click
   const handleBuyNow = () => {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-  
+    
+    console.log("isLoggedIn Value:", localStorage.getItem('isLoggedIn')); // Debug log
+    console.log("Boolean Conversion:", isLoggedIn); // Debug log
+
     if (!isLoggedIn) {
-      // If not logged in, navigate to the login page
-      navigate('/login');
+        console.log("Redirecting to Login...");
+        navigate('/login');
     } else {
-      // If logged in, proceed to the payment page
-      navigate('/payment'); 
+        console.log("Redirecting to Payment...");
+        navigate('/payment');
     }
-  };
+};
+
   
 
   if (loading) {
