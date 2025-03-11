@@ -5,14 +5,29 @@ import Navbar from 'react-bootstrap/Navbar';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-
 function Header() {
-  
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
+
+  // Check if the user is logged in on component mount
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsLoggedIn(true); // User is logged in
+    }
+  }, []);
+
+  // Handle logout
+  const handleLogout = () => {
+    localStorage.removeItem('token'); // Remove token from localStorage
+    localStorage.removeItem('role'); // Remove role from localStorage
+    setIsLoggedIn(false); // Update login state
+    // Optionally, navigate to the home page or login page
+  };
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 992) { // Adjust the breakpoint as needed
+      if (window.innerWidth <= 992) {
         setIsCollapsed(true);
       } else {
         setIsCollapsed(false);
@@ -28,7 +43,6 @@ function Header() {
   }, []);
 
   return (
-    
     <Navbar collapseOnSelect expand="lg" className="custom-navbar">
       <Container>
         {/* Show "Cart[0]" on the left in responsive mode */}
@@ -58,7 +72,21 @@ function Header() {
           {/* Show "Cart[0]" on the right in non-responsive mode */}
           {!isCollapsed && (
             <Nav>
-              <Nav.Link as={Link} to="/Login"><button className='login-btn'>Login</button></Nav.Link>
+              {isLoggedIn ? (
+                // Show logout button if logged in
+                <Nav.Link as={Link} to="/">
+                  <button className='logout-btn 'style={{borderRadius:'100px'}} onClick={handleLogout}>
+                    Logout
+                  </button>
+                </Nav.Link>
+              ) : (
+                // Show login button if not logged in
+                <Nav.Link as={Link} to="/Login">
+                  <button className='login-btn'>
+                    Login
+                  </button>
+                </Nav.Link>
+              )}
             </Nav>
           )}
         </Navbar.Collapse>

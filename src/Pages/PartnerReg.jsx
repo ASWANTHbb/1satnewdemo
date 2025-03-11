@@ -9,6 +9,7 @@ function PartnerReg() {
   const [formData, setFormData] = useState({
     email: '',
     phone: '',
+    password:'',
     alternativePhone: '',
     website: ''
   });
@@ -52,6 +53,7 @@ function PartnerReg() {
 
     const clientData = {
       email: formData.email,
+      password: formData.password,
       phone: formData.phone,
       alternatePhone: formData.alternativePhone,
       website: formData.website
@@ -70,7 +72,7 @@ function PartnerReg() {
 
       if (response.ok) {
         toast.success('Registration successful!');
-        setFormData({ email: '', phone: '', alternativePhone: '', website: '' });
+        setFormData({ email: '', password: '', phone: '', alternativePhone: '', website: '' });
       } else {
         toast.error(result.message || 'Failed to register.');
       }
@@ -94,6 +96,14 @@ function PartnerReg() {
             placeholder="Email"
             className="input1"
             value={formData.email}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            name="password"
+            placeholder="password"
+            className="input1"
+            value={formData.password}
             onChange={handleInputChange}
           />
 
@@ -125,7 +135,8 @@ function PartnerReg() {
             value={formData.website}
             onChange={handleInputChange}
           />
-
+          
+          
           <button className="join-button" onClick={handleJoinNowClick}>
             Join now
           </button>

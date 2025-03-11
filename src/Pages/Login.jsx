@@ -33,8 +33,25 @@ function Login() {
         setFormData({ ...formData, [name]: value });
     };
 
+    const handleModeChange = (isLoginMode) => {
+        setIsLogin(isLoginMode);
+        if (!isLoginMode) {
+            setFormData({
+                email: '',
+                password: '',
+                confirmPassword: ''
+            }); // Reset form on switching to register
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // Check for empty fields before submitting
+        if (!formData.email || !formData.password) {
+            toast.error('Email and password are required.');
+            return;
+        }
+
         try {
             if (isLogin) {
                 const response = await axios.post(`${SERVER_URL}/login`, {
@@ -74,11 +91,12 @@ function Login() {
 
                 console.log("Registration Successful:", response.data);
                 toast.success("Registration Successful!");
-                setIsLogin(true);
+                setIsLogin(true); // Switch to login mode after successful registration
             }
         } catch (error) {
-            console.error("Error:", error.response?.data?.error || error.message);
-            toast.error(error.response?.data?.error || error.message);
+            const errorMessage = error.response?.data?.error || error.message || 'An unexpected error occurred';
+            console.error("Error:", errorMessage);
+            toast.error(errorMessage);
         }
     };
 
@@ -100,8 +118,8 @@ function Login() {
 
                             <div className='d-flex align-items-center justify-content-center flex-column'>
                                 <ButtonGroup aria-label="Basic example" className='logbtn'>
-                                    <Button variant="" onClick={() => setIsLogin(true)}>Login</Button>
-                                    <Button variant="" onClick={() => setIsLogin(false)}>Register</Button>
+                                    <Button variant="" onClick={() => handleModeChange(true)}>Login</Button>
+                                    <Button variant="" onClick={() => handleModeChange(false)}>Register</Button>
                                 </ButtonGroup>
 
                                 <form onSubmit={handleSubmit}>

@@ -3,12 +3,14 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const SERVER_URL = "http://localhost:4000"; // Server URL
+const SERVER_URL = "http://localhost:4000"; // Backend Server URL
 
 function BodilyCov() {
   const { id } = useParams(); // Get product ID from URL
   const [product, setProduct] = useState(null);
   const [time, setTime] = useState("00:30:22");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   // Fetch product data
@@ -16,14 +18,19 @@ function BodilyCov() {
     const fetchProduct = async () => {
       try {
         const response = await fetch(`${SERVER_URL}/products/${id}`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
         const data = await response.json();
         if (data.success) {
           setProduct(data.product);
         } else {
-          console.error("Product not found");
+          setError('Product not found');
         }
       } catch (error) {
-        console.error("Error fetching product:", error);
+        setError('Error fetching product');
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -49,19 +56,26 @@ function BodilyCov() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleAddToCart = () => {
-    if (!product) return;
+  // Handle Buy Now button click
+  const handleBuyNow = () => {
+    // Check if the user is logged in
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-    localStorage.setItem('cartItem', JSON.stringify({ 
-      image: `${SERVER_URL}${product.gifUrl}`, 
-      name: product.name, 
-      price: product.price 
-    }));
-    navigate('/Payment');
+    if (!isLoggedIn) {
+      // If not logged in, navigate to the login page
+      navigate('/payment');
+    } else {
+      // If logged in, proceed to the payment page
+      navigate('/login'); // You can pass product info to payment page if needed
+    }
   };
 
-  if (!product) {
+  if (loading) {
     return <h2 className="text-center text-warning mt-5">Loading product details...</h2>;
+  }
+
+  if (error) {
+    return <h2 className="text-center text-danger mt-5">{error}</h2>;
   }
 
   return (
@@ -69,19 +83,19 @@ function BodilyCov() {
       <Header />
       <div className='container mt-4'>
         <h6 className='text-warning text-center text-md-start px-md-5'>
-         <Link to={'/covering'} style={{textDecoration:'none',color:'#F7931A'}}> BODILY COVERINGS</Link> &nbsp; &gt; &nbsp; {product.name}
+          <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}> BODILY COVERINGS</Link> &nbsp; &gt; &nbsp; {product.name}
         </h6>
         <div className='row align-items-center justify-content-center text-center'>
           <div className='col-12 col-md-6 d-flex justify-content-center'>
             <img 
-              src={`${SERVER_URL}${product.gifUrl}`} 
+              src={product.gifUrl.startsWith('http') ? product.gifUrl : `${SERVER_URL}${product.gifUrl}`} 
               alt={product.name} 
               className='img-fluid rounded shadow-lg' 
               style={{ maxHeight: '400px', width: '100%', objectFit: 'cover' }} 
             />
           </div>
           <div className='col-12 col-md-6 d-flex flex-column justify-content-center align-items-center mt-4 mt-md-0'>
-            <div style={{border:'1px solid orange'}} className='text-center text-light p-4 rounded shadow-lg w-100'>
+            <div style={{ border: '1px solid orange' }} className='text-center text-light p-4 rounded shadow-lg w-100'>
               <p className='display-5 fw-bold text-warning mb-2'>HURRY UP!</p>
               <p className='display-6 fw-bold text-danger mb-2'>DEAL ENDS IN</p>
               <p className='display-6 fw-bold'>{time}</p>
@@ -96,15 +110,15 @@ function BodilyCov() {
               <button 
                 className='btn btn-outline-warning w-100 rounded-pill py-2 mt-2 shadow-sm' 
                 style={{ transition: '0.3s ease-in-out' }}
-                onClick={handleAddToCart}
+                onClick={handleBuyNow} // Corrected button click handler
               >
-               Buy Now
+                Buy Now
               </button>
             </div>
           </div>
         </div>
       </div>
-     <div className='footback'> <Footer/></div>
+      <div className='footback'><Footer /></div>
     </div>
   );
 }

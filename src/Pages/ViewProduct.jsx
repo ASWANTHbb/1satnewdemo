@@ -1,51 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import '../Pages/ViewProduct.css';
+import React, { useState, useEffect } from 'react';
+import AdminHeader from '../components/AdminHeader';
+import '../Pages/Covering.css';
 import { Link } from 'react-router-dom';
-import tshirt from '../assets/tshirt.gif';
-import hoodie from '../assets/hoodie.gif';
-import cap from '../assets/headcap.gif';
-import AdminUpdate from './AdminUpdate';
+import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import AdminHeader from '../components/AdminHeader'
+import { faAngleLeft, faAngleRight, faShop, faTrash } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+import { SERVER_URL } from '../api/serverUrl';
+import AdminUpdate from './AdminUpdate';
 
 function ViewProduct() {
-  const [products, setProducts] = useState([
-    { id: 1, image: tshirt, title: "TORSO COVERING", name: "Espancho", price: "1Sat", usd: "12$" },
-    { id: 2, image: cap, title: "HEAD COVERING", name: "Espancho", price: "1Sat", usd: "12$" },
-    { id: 3, image: hoodie, title: "HOODIE", name: "Espancho", price: "1Sat", usd: "12$" }
-  ]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     document.body.style.overflowX = 'hidden';
+    setLoading(true);
+    axios.get(`${SERVER_URL}/products`)
+      .then((response) => {
+        if (response.data && Array.isArray(response.data.products)) {
+          setProducts(response.data.products);
+        } else {
+          setError('Unexpected API response');
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching products:', error);
+        setError('Failed to fetch products');
+        setLoading(false);
+      });
+
     return () => {
       document.body.style.overflowX = 'auto';
     };
   }, []);
 
-  const handleDelete = (productId) => {
-    const product = products.find(product => product.id === productId);
-    if (product) {
-      toast.success(`${product.title} deleted successfully!`);
-      console.log(`Deleted product: ${product.title} (${product.id})`);
-      setProducts(products.filter(product => product.id !== productId));
-    }
-  };
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
-    <div style={{ overflowX: 'hidden', width: '100vw' }}>
-      <ToastContainer />
-      
+    <div>
       <div className='bod'>
-      <AdminHeader />
-
-        <div className='container-fluid' id='cov'>
+        <AdminHeader />
+        <div className='container' id='cov'>
           <div className="row">
             <div className="col-12 col-md-6 col-lg-5">
               <h1 className='ring' style={{ color: "#F7931A" }}>
-                VIEW<br /> PRODUCTS
+                BODILY<br /> COVERINGS
               </h1>
             </div>
             <div className="col-md-1 col-lg-2 d-none d-md-block"></div>
@@ -58,37 +66,62 @@ function ViewProduct() {
         </div>
       </div>
 
-      <div className="flex-column d-flex justify-content-center align-items-center">
-        <p className='access text-center' style={{ color: '#F7931A' }}>
-          <Link to={'/viewproduct'} style={{ textDecoration: 'none', color: '#F7931A' }}>COVERINGS</Link>  |
-          <Link to={'/viewproduct'} style={{ textDecoration: 'none', color: '#F7931A' }}>ACCESSORIES </Link>  |
-          <Link to={'/viewproduct'} style={{ textDecoration: 'none', color: '#F7931A' }}>OBJECTS</Link>
-        </p>
-        
-        <div className="row mt-5 w-100 m-0">
-          <div className="col-12 col-md-1"></div>
-          {products.map((product) => (
-            <div key={product.id} className="col-12 col-md-3 mb-4 mb-md-0 text-center">
-              <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <img src={product.image} alt="no image" className="img-fluid" style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} />
-              </div>
-              <div className='mt-3 d-flex justify-content-center align-items-center flex-column' style={{ color: '#F7931A' }}>
-                <h6>{product.title}</h6>
-                <p>{product.name}</p>
-                <p className='fs-5'>{product.price} <span style={{ fontSize: '20px' }}>{product.usd}</span></p>
-                <div className="d-flex gap-3">
-                  <button className="btn btn-success">
-                    <AdminUpdate />
-                  </button>
-                  <button className="btn btn-danger" onClick={() => handleDelete(product.id)}>
-                    <FontAwesomeIcon icon={faTrash} />
-                  </button>
+      <div style={{ backgroundColor: '#081f34' }}>
+        <div className="flex-column d-flex justify-content-center align-items-center">
+          
+
+          <hr className='hr1' style={{
+            border: 'none',
+            height: '2px',
+            background: '#F7931A',
+            width: '50%',
+            margin: '20px 0',
+          }} />
+
+          <div className='silver d-flex justify-content-between'>
+            <h3 style={{ color: 'orange' }}>Silver</h3>
+            <p className='silverp'><FontAwesomeIcon icon={faAngleLeft} className='fa-3x ms-5' /></p>
+            <p className='mt-3 fs-6 ms-3'>Deal Start In</p>
+            <p className='mt-2 ms-3 fs-5 '> 01:10:23</p>
+            <p className='silverp'><FontAwesomeIcon icon={faAngleRight} className='fa-3x ms-4' /></p>
+          </div>
+
+          {/* Product Rows */}
+          <div className="row mt-1 w-100">
+            {products.length > 0 ? (
+              products.map((product) => (
+                <div className="col-12 col-md-3 mb-4 mb-md-0 text-center" key={product._id}>
+                  <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    
+                      <img 
+                        src={product.gifUrl?.startsWith('http') ? product.gifUrl : `${SERVER_URL}/${product.gifUrl}`} 
+                        onError={(e) => { e.target.onerror = null; e.target.src = "fallback-image.gif"; }}
+                        alt={product.name}
+                        style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} 
+                      />
+                    
+                  </div>
+                  <div className='mt-3' style={{ color: '#F7931A' }}>
+                    <h6 style={{ color: '#F7931A', marginBottom: '0' }}>{product.name}</h6>
+                    {product.store && <p><FontAwesomeIcon icon={faShop} /> {product.store}</p>}
+                    <p style={{ marginTop: '0', fontSize: '20px' }}>
+                      1Sat <span style={{ fontSize: '10px' }}>${product.price}</span>
+                    </p>
+                    <button className="btn btn-success">
+                      <AdminUpdate />
+                    </button>
+                    <button className="btn btn-danger" >
+                      <FontAwesomeIcon icon={faTrash} />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-          <div className="col-12 col-md-1"></div>
+              ))
+            ) : (
+              <div>No products available.</div>
+            )}
+          </div>
         </div>
+        <div className='footback'><Footer /></div>
       </div>
     </div>
   );
