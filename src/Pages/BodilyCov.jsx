@@ -58,17 +58,17 @@ function BodilyCov() {
 
   // Handle Buy Now button click
   const handleBuyNow = () => {
-    // Check if the user is logged in
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
+  
     if (!isLoggedIn) {
       // If not logged in, navigate to the login page
-      navigate('/payment');
+      navigate('/login');
     } else {
       // If logged in, proceed to the payment page
-      navigate('/login'); // You can pass product info to payment page if needed
+      navigate('/payment'); 
     }
   };
+  
 
   if (loading) {
     return <h2 className="text-center text-warning mt-5">Loading product details...</h2>;
@@ -83,7 +83,7 @@ function BodilyCov() {
       <Header />
       <div className='container mt-4'>
         <h6 className='text-warning text-center text-md-start px-md-5'>
-          <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}> BODILY COVERINGS</Link> &nbsp; &gt; &nbsp; {product.name}
+          <Link  style={{ textDecoration: 'none', color: '#F7931A' }}> BODILY COVERINGS</Link> &nbsp; &gt; &nbsp; {product.name}
         </h6>
         <div className='row align-items-center justify-content-center text-center'>
           <div className='col-12 col-md-6 d-flex justify-content-center'>
