@@ -62,7 +62,7 @@
 }
 
 .earth.animate {
-  transform: scale(3); /* Zoom effect */
+  transform: scale(5); /* Zoom effect */
 }
 
 .white-flash {

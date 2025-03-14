@@ -12,6 +12,7 @@ function Covering() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     document.body.style.overflowX = 'hidden';
@@ -44,6 +45,10 @@ function Covering() {
     return <div>{error}</div>;
   }
 
+  const filteredProducts = products.filter(product => 
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
       <div className='bod'>
@@ -62,25 +67,12 @@ function Covering() {
               </div>
             </div>
           </div>
+          
         </div>
       </div>
 
       <div style={{ backgroundColor: '#081f34' }}>
         <div className="flex-column d-flex justify-content-center align-items-center">
-          <p className='access d-flex justify-content-center align-items-center text-center' style={{ color: '#F7931A' }}>
-            <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}>COVERINGS</Link> | 
-            <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}>ACCESSORIES</Link> | 
-            <Link to={'/covering'} style={{ textDecoration: 'none', color: '#F7931A' }}>OBJECTS</Link>
-          </p>
-
-          <hr className='hr1' style={{
-            border: 'none',
-            height: '2px',
-            background: '#F7931A',
-            width: '50%',
-            margin: '20px 0',
-          }} />
-
           <div className='silver d-flex justify-content-between'>
             <h3 style={{ color: 'orange' }}>Silver</h3>
             <p className='silverp'><FontAwesomeIcon icon={faAngleLeft} className='fa-3x ms-5' /></p>
@@ -91,8 +83,18 @@ function Covering() {
 
           {/* Product Rows */}
           <div className="row mt-1 w-100">
-            {products.length > 0 ? (
-              products.map((product) => (
+          <div className='mt-4 text-center'>
+            <input
+              type='text'
+              placeholder='Search by product name...'
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className='form-control w-50 mx-auto'
+              style={{backgroundColor:'transparent',  border: "1px solid #F7931A",placeholderColor: "#F7931A",   color: "#F7931A" }}
+            />
+          </div>
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product) => (
                 <div className="col-12 col-md-3 mb-4 mb-md-0 text-center" key={product._id}>
                   <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Link to={`/bodily-covering/${product._id}`} style={{ textDecoration: 'none' }}>
