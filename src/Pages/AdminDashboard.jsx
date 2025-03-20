@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../Pages/Home.css';
-import alien from '../assets/alien.png';
+
 import earth from '../assets/earth.gif';
 import footbg from '../assets/bgimg1.png';
 import Accordion from 'react-bootstrap/Accordion';
@@ -62,7 +62,7 @@ function Home() {
                     <p className='hello-text'>HELLO</p>
                 </div>
                 <div className='alien-container'>
-                    <img src={alien} alt="Alien" className='alien1' />
+                    
                 </div>
                 <div className='d-flex justify-content-center align-items-center'><div className='down-text'>DOWN&nbsp;&nbsp; THERE</div></div>
             </div>
