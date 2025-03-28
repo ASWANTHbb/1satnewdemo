@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import osm from "../api/osmProviders"
 import axios from 'axios';
+import { SERVER_URL } from '../api/serverUrl';
 
 import icon1 from "../assets/icon1.png";
 import icon2 from "../assets/icon2.png";
@@ -35,7 +36,7 @@ function Map() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/products")
+      .get("https://onesatui.onrender.com/products")
       .then((response) => {
         const products = response.data.products;
 
