@@ -52,6 +52,25 @@
   color: inherit; /* Keeps the text color */
 }
 
-.login-btn{
-  border-radius: 100px;
+/* Improved Login and Logout Buttons */
+.login-btn, .logout-btn {
+  background-color: transparent;
+  color: #F7931A; /* Matching navbar color */
+  border: 2px solid #F7931A; /* Add border for definition */
+  border-radius: 25px; /* Rounded corners */
+  padding: 8px 20px; /* Comfortable padding */
+  font-family: 'Space Mono';
+  font-size: 1rem; 
+  text-decoration: none;
+  transition: all 0.3s ease; /* Smooth hover effect */
+  display: inline-block; /* Ensures proper size */
+  text-align: center;
+}
+
+/* Hover effect */
+.login-btn:hover, .logout-btn:hover {
+  background-color: #F7931A; 
+  color: #fff; /* White text on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+  box-shadow: 0 4px 12px rgba(247, 147, 26, 0.5); /* Subtle shadow */
 }

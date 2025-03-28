@@ -54,9 +54,23 @@ function Header() {
       <Container>
         {/* Show "Cart[0]" on the left in responsive mode */}
         {isCollapsed && (
-          <Nav className="responsive-cart">
-            <Nav.Link as={Link} to="/cart">CART</Nav.Link>
-          </Nav>
+          <Nav>
+          {isLoggedIn ? (
+            // Show logout button if logged in
+            <Nav.Link as={Link} to="/">
+              <button className='logout-btn' onClick={handleLogout}>
+                Logout
+              </button>
+            </Nav.Link>
+          ) : (
+            // Show login button if not logged in
+            <Nav.Link as={Link} to="/Login">
+              <button className='login-btn'>
+                Login
+              </button>
+            </Nav.Link>
+          )}
+        </Nav>
         )}
 
         {/* Always show "1Sat" in the center */}
@@ -82,7 +96,7 @@ function Header() {
               {isLoggedIn ? (
                 // Show logout button if logged in
                 <Nav.Link as={Link} to="/">
-                  <button className='logout-btn 'style={{borderRadius:'100px'}} onClick={handleLogout}>
+                  <button className='logout-btn' onClick={handleLogout}>
                     Logout
                   </button>
                 </Nav.Link>
