@@ -1,317 +1,234 @@
+/* General styles */
 .homebg {
-  background-image: url('../assets/alienbg.png');
+  background-image: url('../assets/HelloDownThere.png');
   background-size: cover;
   background-position: center;
-  height: 120vh;
+  height: 100vh;
   width: 100%;
   border-bottom: 2px solid #F7931A;
+  overflow: hidden;
 }
 
-.hello-text {
-  font-size: 40vh;
-  margin-top: -10vh;
+.hello-text{
+  font-size: 20vw;
   text-align: center;
-font-family: 'Bebas Neue';
-
+  font-family: 'Bebas Neue', sans-serif;
+  margin: 0px;
 }
 
-.alien-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.alien1 {
-  position: absolute;
-  left: 30%;
-  top: 240px;
-  max-height: 84vh;
-  width: 80vh;
-}
-
-.down-text {
-  position: relative;
-  font-size: 40vh;
-  margin-top: 0vh;
+ .down-text {
+  font-size: 18vw;
   text-align: center;
-  font-family: "Bebas Neue", serif;
-
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 20vh
+  
 }
 
 .starbg {
   background-image: url('../assets/landingbg.jpg');
   background-size: cover;
   background-position: center;
-  height: 290vh;
+  min-height: 100vh;
   width: 100%;
 }
 
+/* Earth animation */
 .earth-container {
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .earth {
-transition: transform 5s ease-in-out;
-cursor: pointer;
-position: absolute;
-top: 10vh;
-animation: spinEarth 10s linear infinite;
+  transition: transform 2s ease-in-out;
+  cursor: pointer;
+  animation: spinEarth 20s linear infinite;
+  max-width: 70%;
+  height: auto;
+  margin-top: 10vh;
 }
 
 .earth.animate {
-transform: scale(6); /* Zoom effect */
+  transform: scale(4);
 }
 
 .white-flash {
-position: absolute;
-width: 100%;
-height: 100%;
-background: white;
-opacity: 5;
-transition: opacity 5.5s ease-in-out;
-z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
 }
 
 .white-flash.show {
-opacity: 5;
+  opacity: 1;
 }
 
+/* Greetings */
+.greet, .greet1, .faq, .faq1 {
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  margin: 10px;
+  color: #F7931A;
+}
 
 .greet {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 57vh;
-  font-size: 3.5vh;
-  font-family: 'Space Mono', monospace;
-  font-weight: bolder;
+  font-size: 1.2vw;
+  font-weight: bold;
+  margin-top: 10vh;
 }
 
-.greet1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 65vh;
-  font-size: 2vh;
-  font-family: 'Space Mono', monospace;
-  padding-left: 450px;
-  padding-right: 450px;
-  text-align: center;
-  font-weight: bolder;
-  
+.greet1{
+  font-size: 1.2vw;
+  padding: 50px;
 }
-
-.footbg {
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 990px;
+.faq{
+  font-size: 1.2vw;
 }
-
-.faq {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  font-size: 6vh;
-  font-family: 'Bebas Neue', cursive;
-  text-align: center;
-  font-weight: bolder;
-  bottom: 150px;
-}
-
 .faq1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  bottom: 15vh;
-  font-size: 2vh;
-  font-family: 'Space Mono', monospace;
-  padding-left: 450px;
-  padding-right: 450px;
-  text-align: center;
-  font-weight: bolder;
+  font-size: 1.2vw;
+  padding: 50px;
 }
 
-/* Media Queries for Responsive Design */
 
-/* For tablets and smaller desktops */
-@media (max-width: 1024px) {
-  .hello-text {
-      font-size: 20vh;
-      margin-top: 10vh;
-  }
-
-  .alien1 {
-      width: 90vw;
-      top: 500px;
-      left: 1vh;
-  }
-
-  .down-text {
-      font-size: 20vh;
-      margin-top: 1vh;
-  }
-
-  .greet1, .faq1 {
-      padding-left: 50px;
-      padding-right: 50px;
-  }
-  .faq{
-      bottom: 200px;
-  }
-}
-
-/* For mobile devices */
-@media (max-width: 768px) {
-  .hello-text {
-      font-size: 20vh;
-      margin-top: 10vh;
-  }
-
-  .alien1 {
-      width: 90vw;
-      top: 500px;
-      left: 1vh;
-  }
-
-  .down-text {
-      font-size: 20vh;
-      margin-top: 1vh;
-  }
-
-  .greet1, .faq1 {
-      padding-left: 50px;
-      padding-right: 50px;
-  }
-  .faq{
-      bottom: 200px;
-  }
-}
-
-/* For very small mobile devices */
-@media (max-width: 480px) {
-  .hello-text {
-      font-size: 25vh;
-      margin-top: 10vh;
-  }
-
-  .alien1 {
-      z-index: 1;
-      height: 70vh;
-      top: 50vh;
-      
-      
-  }
-
-  .down-text {
-    font-size: 25vh;
-    margin-left: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    line-height: 30vh;
-      
-  }
-
-  .greet1, .faq1 {
-      padding-left: 20px;
-      padding-right: 20px;
-  }
-  .faq{
-      bottom: 200px;
-  }
-}
+/* Accordion styling */
 .accordion {
-margin-bottom: 3rem;
-background-color: transparent !important; /* Make accordion background transparent */
-font-family: 'Space Mono', monospace;
+  margin-bottom: 3rem;
+  background-color: transparent !important; /* Make accordion background transparent */
+  font-family: 'Space Mono', monospace;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .accordion-item {
-margin-bottom: 0; /* Remove margin between Accordion items */
-background-color: transparent !important; /* Make accordion item background transparent */
-font-family: 'Space Mono', monospace;
+  margin-bottom: 0; /* Remove margin between Accordion items */
+  background-color: transparent !important; /* Make accordion item background transparent */
+  font-family: 'Space Mono', monospace;
 }
 
 .accordion-button {
-position: relative;
-padding-right: 40px; /* Ensure space for the custom icon */
-background-color: transparent !important; /* Make button background transparent */
-border: none !important;
-box-shadow: none !important;
-color: #F7931A !important; /* Bitcoin orange text color */
-font-family: 'Space Mono', monospace;
+  position: relative;
+  padding-right: 40px; /* Ensure space for the custom icon */
+  background-color: transparent !important; /* Make button background transparent */
+  border: none !important;
+  box-shadow: none !important;
+  color: #F7931A !important; /* Bitcoin orange text color */
+  font-family: 'Space Mono', monospace;
 }
 
 .accordion-button:not(.collapsed) {
-background-color: transparent !important; /* Remove background color when expanded */
-box-shadow: none !important; /* Remove box shadow when expanded */
+  background-color: transparent !important; /* Remove background color when expanded */
+  box-shadow: none !important; /* Remove box shadow when expanded */
 }
 
 .accordion-button:hover {
-background-color: transparent !important; /* Remove hover background color */
+  background-color: transparent !important; /* Remove hover background color */
 }
 
 .accordion-button:focus {
-box-shadow: none !important; /* Remove focus outline */
+  box-shadow: none !important; /* Remove focus outline */
 }
 
 .accordion-button:not(.collapsed)::before,
 .accordion-button.collapsed::before {
-content: "";
-position: absolute;
-right: 15px; /* Position the icon where the default arrow was */
-top: 50%;
-transform: translateY(-50%);
-font-size: 1.2rem;
-font-weight: bold;
+  content: "";
+  position: absolute;
+  right: 15px; /* Position the icon where the default arrow was */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .accordion-button:not(.collapsed)::before {
-content: "-"; /* Minus icon when expanded */
+  content: "-"; /* Minus icon when expanded */
 }
 
 .accordion-button.collapsed::before {
-content: "+"; /* Plus icon when collapsed */
+  content: "+"; /* Plus icon when collapsed */
 }
 
-/* Move the entire Accordion to the top of the screen */
-.accordion-container {
-margin-top: 0; /* Remove top margin */
-padding-top: 0; /* Remove top padding */
-background-color: transparent !important; /* Make container background transparent */
+
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .hello-text{
+      font-size: 10vw;
+  }
+  .down-text {
+    font-size: 8vw;
+    line-height: 10vh;
+  }
+
+  .greet, .greet1 {
+      font-size: 3vw;
+  }
+
+  .earth {
+      max-width: 90%;
+  }
+  .faq1{
+    font-size: 2.5vw;
+  }
 }
 
-/* Remove underline from accordion items */
-.accordion-container .accordion-item {
-  border-bottom: none !important;
+@media (max-width: 768px) {
+  .hello-text{
+    font-size: 40vw;
+    line-height: 40vh;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    
 }
-#acco{
+.down-text {
+  font-size: 40vw;
+  line-height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  .greet, .greet1 {
+      font-size: 3.5vw;
+  }
 
-  padding-left: 10px;
-  padding-right: 10px; 
-  font-family: 'Space Mono', monospace;
- 
+  .faq,.faq1{
+    font-size: 3.5vw;
+  }
+
+  .earth {
+      max-width: 80%;
+  }
 }
-.accordion-container .accordion .accordion-button {
-  font-size: 13px !important; /* Force the font size */
+
+@media (max-width: 480px) {
+  .hello-text{
+    font-size: 40vw;
+    line-height: 40vh;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    
 }
-.inside{
-  font-family: 'Space Mono', monospace;
+.down-text {
+  font-size: 40vw;
+  line-height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.accordion-body{
-  font-family: 'Space Mono', monospace;
+  .greet, .greet1 {
+      font-size: 3.5vw;
+  }
+
+  .faq,.faq1{
+    font-size: 3.5vw;
+  }
+
+  .earth {
+      max-width: 80%;
+  }
 }

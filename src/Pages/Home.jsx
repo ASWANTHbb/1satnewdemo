@@ -2,90 +2,85 @@ import React, { useEffect, useState } from 'react';
 import '../Pages/Home.css';
 
 import earth from '../assets/earth.gif';
-import footbg from '../assets/bgimg1.png';
+
 import Accordion from 'react-bootstrap/Accordion';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 function Home() {
-    const [activeKey, setActiveKey] = useState(null); // State to track the active accordion item
-    
-      useEffect(() => {
+    const [activeKey, setActiveKey] = useState(null);
+
+    useEffect(() => {
         document.body.style.overflowX = 'hidden';
         return () => {
-          document.body.style.overflowX = 'auto';
+            document.body.style.overflowX = 'auto';
         };
-      }, []);
-    
-      // Function to handle accordion item selection
-      const handleSelect = (eventKey) => {
-        setActiveKey(activeKey === eventKey ? null : eventKey); // Toggle the active key
-      };
-      const [isCollapsed, setIsCollapsed] = useState(false);
+    }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 992) { // Adjust the breakpoint as needed
-        setIsCollapsed(true);
-      } else {
-        setIsCollapsed(false);
-      }
+    const handleSelect = (eventKey) => {
+        setActiveKey(activeKey === eventKey ? null : eventKey);
     };
 
-    handleResize(); // Initial check
-    window.addEventListener('resize', handleResize);
+    const [isCollapsed, setIsCollapsed] = useState(false);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsCollapsed(window.innerWidth <= 992);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const handleEarthClick = () => {
+        const earthImg = document.querySelector('.earth');
+        const flash = document.querySelector('.white-flash');
+
+        if (earthImg && flash) {
+            earthImg.classList.add('animate');
+            flash.classList.add('show');
+
+            setTimeout(() => {
+                window.location.href = "/Map";
+            }, 900);
+        }
     };
-  }, []);
 
-  const handleEarthClick = () => {
-    const earthImg = document.querySelector('.earth');
-    const flash = document.querySelector('.white-flash');
-  
-    if (earthImg && flash) {
-      earthImg.classList.add('animate'); // Zoom effect
-      flash.classList.add('show'); // White flash effect
-  
-      setTimeout(() => {
-        window.location.href = "/Map"; // Redirect after animation
-      }, 900); // Adjust timing to match animation
-    }
-  };
-  
     return (
         <>
             <div className='homebg'>
-              <Header/>
+                <Header />
                 <div className='d-flex justify-content-center'>
                     <p className='hello-text'>HELLO</p>
                 </div>
-                <div className='alien-container'>
-                   
+                <div className='alien-container'></div>
+                    <p className='down-text'>DOWN&nbsp;&nbsp; THERE</p>
                 </div>
-                <div className='d-flex justify-content-center align-items-center'><div className='down-text'>DOWN&nbsp;&nbsp; THERE</div></div>
-            </div>
+
             <div className='starbg'>
-            <div className='earth-container'>
-            <div className="white-flash"></div> {/* White flash overlay */}
-                <img src={earth} alt="Alien" className='earth' onClick={handleEarthClick} />
+                <div className='earth-container'>
+                    <div className="white-flash"></div>
+                    <img src={earth} alt="Alien" className='earth' onClick={handleEarthClick} />
                 </div>
                 <div className='greet'>GREETINGS, EARTHLINGS!</div>
-                <div className='greet1'>What does a highly advanced civilization have to do to get noticed around here?<br /><br />
-
-We hail from the constellation Canis Minor and we’re here to harvest your organs and drain your oceans for rocket fuel. Kidding! That’s more of a Canis Major <br /> vibe. <br /><br />
-
-Given that your human civilization has not yet achieved interstellar travel, you are likely unaware of how lonely space is. But we are aware! So we hooked up some br garvanplows <br /> to a couple of flargenbows (and a minoflor, just for giggles) <br /> and set out to find some friends in the cosmos. <br /><br />
-
-For the last hundred years, we’ve been trying to make contact with you, to no avail. But then our Lead Human Researcher made a huge breakthrough: nothing is real to humans until <br /> it is on the internet. So with the help of your Squarespace technology, <br /> we sincerely hope the 55,419th time is the charm!</div>
-
-<div className='footbg-container'>
-                    <img src={footbg} alt="Alien" className='footbg' />
-                    <div className='faq'>FAQS</div>
-                    <div className='faq1'>We understand enough about your fragile human brains to know that you probably have questions about the sudden appearance of a race of technologically superior space beings on your intergalactic doorstep. Our Human Affairs Officer has prepared some answers below.</div>
-
+                <div className='greet1'>
+                    What does a highly advanced civilization have to do to get noticed around here? <br /><br />
+                    We hail from the constellation Canis Minor and we’re here to harvest your organs and drain your oceans for rocket fuel. Kidding! That’s more of a Canis Major vibe. <br /><br />
+                    Given that your human civilization has not yet achieved interstellar travel, you are likely unaware of how lonely space is. But we are aware! So we hooked up some br garvanplows <br /> 
+                    to a couple of flargenbows (and a minoflor, just for giggles) and set out to find some friends in the cosmos.
                 </div>
+
+                <div className='footbg-container'>
+                    <div className='faq'>FAQS</div>
+                    <div className='faq1'>
+                        We understand enough about your fragile human brains to know that you probably have questions about the sudden appearance of a race of technologically superior space beings on your intergalactic doorstep.
+                    </div>
+                </div>
+
                 <div className="row d-flex justify-content-between" id='acco'>
                     <div className="col-md-4"> <div className="accordion-container">
                   <Accordion activeKey={activeKey} onSelect={handleSelect} flush>
@@ -263,11 +258,9 @@ For the last hundred years, we’ve been trying to make contact with you, to no 
                 </div>
                     </div>
                 </div>
-                <Footer/>
+                <Footer />
             </div>
-           
         </>
-        
     );
 }
 
