@@ -35,7 +35,7 @@ function Map() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/products")
+      .get("https://onesatui.onrender.com/products")
       .then((response) => {
         const products = response.data.products;
 
