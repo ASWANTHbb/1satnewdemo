@@ -4,18 +4,29 @@ import '../Pages/Covering.css';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleLeft, faAngleRight, faShop, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight, faShop, faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { SERVER_URL } from '../api/serverUrl';
 import AdminUpdate from './AdminUpdate';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ViewProduct() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [editingProduct, setEditingProduct] = useState(null); // For Edit Modal
 
   useEffect(() => {
     document.body.style.overflowX = 'hidden';
+    fetchProducts();
+
+    return () => {
+      document.body.style.overflowX = 'auto';
+    };
+  }, []);
+
+  const fetchProducts = () => {
     setLoading(true);
     axios.get(`${SERVER_URL}/products`)
       .then((response) => {
@@ -31,19 +42,37 @@ function ViewProduct() {
         setError('Failed to fetch products');
         setLoading(false);
       });
+  };
 
-    return () => {
-      document.body.style.overflowX = 'auto';
-    };
-  }, []);
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this product?")) {
+      try {
+        const token = localStorage.getItem('token');
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+        await axios.delete(`${SERVER_URL}/products/delete/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        });
+        
+        toast.success("Product deleted successfully");
+        setProducts(products.filter((p) => p._id !== id));
+      } catch (error) {
+        console.error(error);
+        toast.error("Failed to delete product");
+      }
+    }
+  };
 
-  if (error) {
-    return <div>{error}</div>;
-  }
+  const handleUpdate = (updatedProduct) => {
+    // Update the product list with new data
+    setProducts((prevProducts) =>
+      prevProducts.map((p) => (p._id === updatedProduct._id ? updatedProduct : p))
+    );
+  };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <div>
@@ -68,7 +97,6 @@ function ViewProduct() {
 
       <div style={{ backgroundColor: '#081f34' }}>
         <div className="flex-column d-flex justify-content-center align-items-center">
-          
 
           <hr className='hr1' style={{
             border: 'none',
@@ -92,14 +120,12 @@ function ViewProduct() {
               products.map((product) => (
                 <div className="col-12 col-md-3 mb-4 mb-md-0 text-center" key={product._id}>
                   <div style={{ height: '400px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    
-                      <img 
-                        src={product.gifUrl?.startsWith('http') ? product.gifUrl : `${SERVER_URL}/${product.gifUrl}`} 
-                        onError={(e) => { e.target.onerror = null; e.target.src = "fallback-image.gif"; }}
-                        alt={product.name}
-                        style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }} 
-                      />
-                    
+                    <img
+                      src={product.gifUrl?.startsWith('http') ? product.gifUrl : `${SERVER_URL}/${product.gifUrl}`}
+                      onError={(e) => { e.target.onerror = null; e.target.src = "fallback-image.gif"; }}
+                      alt={product.name}
+                      style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
+                    />
                   </div>
                   <div className='mt-3' style={{ color: '#F7931A' }}>
                     <h6 style={{ color: '#F7931A', marginBottom: '0' }}>{product.name}</h6>
@@ -107,12 +133,15 @@ function ViewProduct() {
                     <p style={{ marginTop: '0', fontSize: '20px' }}>
                       1Sat <span style={{ fontSize: '10px' }}>${product.price}</span>
                     </p>
-                    <button className="btn btn-success">
-                      <AdminUpdate />
-                    </button>
-                    <button className="btn btn-danger" >
-                      <FontAwesomeIcon icon={faTrash} />
-                    </button>
+                    <div className="d-flex justify-content-center gap-2">
+                    <Link to={`/update/${product._id}`} className="btn btn-outline-warning">
+  <FontAwesomeIcon icon={faPenToSquare} />
+</Link>
+
+                      <button className="btn btn-outline-danger" onClick={() => handleDelete(product._id)}>
+                        <FontAwesomeIcon icon={faTrash} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))
@@ -123,6 +152,18 @@ function ViewProduct() {
         </div>
         <div className='footback'><Footer /></div>
       </div>
+
+      {/* Edit Modal */}
+      {editingProduct && (
+        <AdminUpdate
+          product={editingProduct}
+          onUpdate={(updated) => {
+            handleUpdate(updated);
+            setEditingProduct(null);
+          }}
+        />
+      )}
+      <ToastContainer theme="colored" position="top-center" autoClose={2000} />
     </div>
   );
 }
