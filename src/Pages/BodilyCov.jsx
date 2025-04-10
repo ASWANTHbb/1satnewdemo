@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const SERVER_URL = "http://localhost:4000"; // Backend Server URL
+import { SERVER_URL } from '../api/serverUrl';
 
 function BodilyCov() {
   const { id } = useParams(); // Get product ID from URL

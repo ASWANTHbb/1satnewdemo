@@ -28,6 +28,7 @@ function AddProduct() {
     shopName: "", address: "", latitude: "", longitude: "",
     country: "", city: ""
   });
+
   const [gifFile, setGifFile] = useState(null);
 
   const handleChange = (e) => {
@@ -56,40 +57,41 @@ function AddProduct() {
 
   const handleSubmit = async () => {
     if (!validateForm()) return;
-  
+
     const token = localStorage.getItem("token");
     if (!token) {
       toast.error("Unauthorized: No token found");
       return;
     }
-  
+
     const formData = new FormData();
-  
-    // Add normal fields
+
+    // Basic fields
     formData.append("name", product.name);
     formData.append("description", product.description);
     formData.append("price", product.price);
     formData.append("count", product.count);
-  
-    // ✅ Append `availableTime` fields as separate keys
+
+    // Available time
     formData.append("availableTime.start", convertToISO(product.availableTimeStart));
     formData.append("availableTime.end", convertToISO(product.availableTimeEnd));
     formData.append("availableTime.duration", product.duration);
-  
-    // ✅ Append `location` fields as separate keys
-    formData.append("location.shopName", product.shopName);
-    formData.append("location.address", product.address);
-    formData.append("location.latitude", product.latitude);
-    formData.append("location.longitude", product.longitude);
+
+    // Location
     formData.append("location.city", product.city);
     formData.append("location.country", product.country);
-  
+
+    // New single shop structure
+    formData.append("shop.shopName", product.shopName);
+    formData.append("shop.location", product.city); // optional, or separate field
+    formData.append("shop.address", product.address);
+    formData.append("shop.latitude", product.latitude);
+    formData.append("shop.longitude", product.longitude);
+
     if (gifFile) {
       formData.append("gif", gifFile);
     }
-  
-    console.log("🚀 Submitting Product Data:", Object.fromEntries(formData));
-  
+
     try {
       const response = await fetch(`${SERVER_URL}/products/add`, {
         method: "POST",
@@ -98,16 +100,16 @@ function AddProduct() {
         },
         body: formData,
       });
-  
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || "Failed to add product");
       }
-  
+
       const result = await response.json();
       toast.success("Product added successfully!");
       console.log("✅ Success Response:", result);
-  
+
       setProduct({
         name: "", description: "", price: "", count: "",
         availableTimeStart: "", availableTimeEnd: "", duration: "",
@@ -120,8 +122,6 @@ function AddProduct() {
       console.error("❌ Error:", error);
     }
   };
-  
-  
 
   return (
     <>
@@ -134,24 +134,31 @@ function AddProduct() {
             <Form>
               {Object.keys(product).map((key) => (
                 <Form.Group key={key} className="mb-3">
-                  <Form.Label className='text-orange'>{key.replace(/([A-Z])/g, ' $1')} :</Form.Label>
-                  <Form.Control 
-                    className='border rounded p-3 text-orange' 
-                    type={key.includes("availableTime") ? "datetime-local" : "text"} 
+                  <Form.Label className='text-orange'>
+                    {key
+                      .replace(/([A-Z])/g, ' $1')
+                      .replace(/^(.)/, (m) => m.toUpperCase())
+                      .replace('available Time Start', 'Start Time')
+                      .replace('available Time End', 'End Time')}
+                    :
+                  </Form.Label>
+                  <Form.Control
+                    className='border rounded p-3 text-orange'
+                    type={key.includes("availableTime") ? "datetime-local" : "text"}
                     placeholder={`Enter ${key}`}
-                    value={product[key]} 
-                    name={key} 
-                    onChange={handleChange} 
+                    value={product[key]}
+                    name={key}
+                    onChange={handleChange}
                   />
                 </Form.Group>
               ))}
               <Form.Group className="mb-3">
                 <Form.Label className='text-orange'>Upload GIF:</Form.Label>
-                <Form.Control 
-                  className='border rounded p-3 text-orange' 
-                  type="file" 
-                  accept="image/gif" 
-                  onChange={handleFileChange} 
+                <Form.Control
+                  className='border rounded p-3 text-orange'
+                  type="file"
+                  accept="image/gif"
+                  onChange={handleFileChange}
                 />
               </Form.Group>
               <div className="d-flex justify-content-evenly">
@@ -168,7 +175,6 @@ function AddProduct() {
         </div>
         <div className='footback'><Footer /></div>
       </div>
-
       <ToastContainer />
     </>
   );

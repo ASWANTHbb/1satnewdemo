@@ -49,7 +49,7 @@ function App() {
           {/* Admin Routes */}
           <Route path="/addproduct" element={<AddProduct />} />
           <Route path="/view" element={<ViewProduct />} />
-          <Route path="/update" element={<AdminUpdate />} />
+          <Route path="/update/:id" element={<AdminUpdate />} />
         </Routes>
       </Suspense>
     </>
