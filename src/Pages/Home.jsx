@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../Pages/Home.css';
+import { useNavigate } from 'react-router-dom';
 
 import earth from '../assets/earth.gif';
 
@@ -9,6 +10,7 @@ import Header from '../components/Header';
 
 function Home() {
     const [activeKey, setActiveKey] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.body.style.overflowX = 'hidden';
@@ -45,7 +47,7 @@ function Home() {
             flash.classList.add('show');
 
             setTimeout(() => {
-                window.location.href = "/Map";
+              navigate("/Map");
             }, 900);
         }
     };

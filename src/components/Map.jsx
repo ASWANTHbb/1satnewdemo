@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import osm from "../api/osmProviders"
+import osm from "../api/osmProviders";
 import axios from 'axios';
 import { SERVER_URL } from '../api/serverUrl';
 
@@ -32,28 +32,30 @@ function Map() {
   const [shops, setShops] = useState([]);
   const ZOOM_LEVEL = 9;
   const mapRef = useRef();
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("https://onesatui.onrender.com/products")
+      .get(`${SERVER_URL}/products`)
       .then((response) => {
         const products = response.data.products;
 
-        // Extract shop locations and attach productName and productId to each shop
-        const shopLocations = products.flatMap((product) =>
-          product.availableShops.map((shop) => ({
-            ...shop,
-            productName: product.name, // Attach product name
-            productId: product._id, // Attach product ID
-          }))
-        );
+        // Updated: Extract shop info from the single `shop` field per product
+        const shopLocations = products
+          .filter((product) => product.shop && product.shop.latitude && product.shop.longitude)
+          .map((product) => ({
+            ...product.shop,
+            productName: product.name,
+            productId: product._id,
+          }));
 
         setShops(shopLocations);
 
-        // Center map on the first shop location (if available)
         if (shopLocations.length > 0) {
-          setCenter({ lat: shopLocations[0].latitude, lng: shopLocations[0].longitude });
+          setCenter({
+            lat: shopLocations[0].latitude,
+            lng: shopLocations[0].longitude,
+          });
         }
       })
       .catch((error) => console.error("Error fetching products:", error));
@@ -66,27 +68,31 @@ function Map() {
         <MapContainer center={center} zoom={ZOOM_LEVEL} ref={mapRef} style={{ height: "450px", width: "100%" }}>
           <TileLayer url={osm.maptiler.url} attribution={osm.maptiler.attribution} />
 
-          {/* Random Icons for Shop Markers */}
           {shops.map((shop, index) => (
             <Marker key={index} position={[shop.latitude, shop.longitude]} icon={getRandomIcon()}>
               <Tooltip direction="top" offset={[0, -10]} opacity={1} permanent={false}>
-                <b>{shop.productName}</b> {/* Product name on hover */}
+                <b>{shop.productName}</b>
               </Tooltip>
               <Popup>
                 <b>{shop.productName}</b> <br />
                 {shop.shopName} <br />
                 {shop.address} <br />
-                {/* Clickable Button */}
-                <button 
-                  onClick={() => navigate(`/bodily-covering/${shop.productId}`)} 
-                  style={{ background: "blue", color: "white", padding: "5px 10px", border: "none", cursor: "pointer", marginTop: "5px" }}
+                <button
+                  onClick={() => navigate(`/bodily-covering/${shop.productId}`)}
+                  style={{
+                    background: "blue",
+                    color: "white",
+                    padding: "5px 10px",
+                    border: "none",
+                    cursor: "pointer",
+                    marginTop: "5px",
+                  }}
                 >
                   View Details
                 </button>
               </Popup>
             </Marker>
           ))}
-
         </MapContainer>
       </div>
       <div className='footback'><Footer /></div>
