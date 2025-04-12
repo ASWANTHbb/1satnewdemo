@@ -45,6 +45,8 @@
   max-width: 70%;
   height: auto;
   margin-top: 10vh;
+  z-index: 2; /* 👈 Add this line */
+  position: relative;
 }
 
 .earth.animate {
@@ -59,6 +61,7 @@
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   z-index: 1;
+  pointer-events: none;
 }
 
 .white-flash.show {
